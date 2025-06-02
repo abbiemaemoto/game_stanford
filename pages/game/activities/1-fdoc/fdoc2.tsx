@@ -15,19 +15,20 @@ export default function OptionPage() {
     return (
       <div className="min-h-screen bg-sky-200 p-8 relative">
         {/* Student image in bottom left corner, reflected over y-axis */}
-        <div className="absolute bottom-8 left-8">
-          <div className="relative w-40 h-40 md:w-64 md:h-64">
+        <div className="absolute bottom-4 left-4 z-0">
+          <div className="relative w-50 h-50 sm:w-50 sm:h-50 md:w-60 md:h-60 lg:w-70 lg:h-70">
             <Image
               src="/selfie.png"
               alt="student taking selfie"
               fill
-              
-              className="object-contain"
+              className="object-contain pointer-events-none"
             />
           </div>
         </div>
+
+
   
-        <div className="max-w-6xl mx-auto pl-0 md:pl-32">
+        <div className="max-w-6xl mx-auto pl-0 md:pl-32 pt-12">
           {" "}
           {/* Added padding to prevent overlap with image */}
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
