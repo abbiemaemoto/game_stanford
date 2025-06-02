@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function NextInstructionsPage() {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleContinue = () => {
-    router.push("/instructions/final")
-  }
+    router.push("/instructions/intro3");
+  };
 
   return (
     <div className="min-h-screen relative">
@@ -28,7 +28,11 @@ export default function NextInstructionsPage() {
       {/* Back Button */}
       <div className="absolute top-3 left-3 z-10">
         <Link href="/instructions">
-          <Button variant="outline" size="sm" className="flex items-center gap-2 bg-white/80 backdrop-blur-sm">
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex items-center gap-2 bg-white/80 backdrop-blur-sm"
+          >
             <ArrowLeft className="w-4 h-4" />
             Back
           </Button>
@@ -44,19 +48,22 @@ export default function NextInstructionsPage() {
           {/* Main Text */}
           <div className="flex-1 flex items-center justify-center">
             <p className="text-3xl text-gray-1000 text-center leading-relaxed max-w-3xl">
-              Together, the four of you will experience the chaos, unforgettable nights, and big decisions of senior
-              year on the Farm all together.
+              Together, the four of you will experience the chaos, unforgettable
+              nights, and big decisions of senior year on the Farm all together.
             </p>
           </div>
 
           {/* Continue Button */}
           <div className="flex justify-end">
-            <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg" onClick={handleContinue}>
+            <Button
+              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg"
+              onClick={handleContinue}
+            >
               Continue
             </Button>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
