@@ -10,7 +10,7 @@ export default function GraduationPage() {
   const router = useRouter();
 
   const handleContinue = () => {
-    router.push("/game/activities/fortune-teller/fortune-teller2");
+    router.push("/game/activities/24-fortune-teller/fortune-teller2");
   };
 
   useEffect(() => {

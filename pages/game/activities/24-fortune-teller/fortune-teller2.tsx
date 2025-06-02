@@ -9,7 +9,7 @@ export default function PlaceholderPage() {
     const router = useRouter();
   
     const handleContinue = () => {
-      router.push("/game/activities/fortune-teller/fortune-teller3");
+      router.push("/game/activities/24-fortune-teller/fortune-teller3");
     };
 
     return (
