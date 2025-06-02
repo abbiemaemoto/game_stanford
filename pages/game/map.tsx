@@ -122,7 +122,7 @@ export default function GamePage() {
           🎒
         </Link>
         <Link
-          href="activities/halloween"
+          href="activities/5-halloween/halloween1"
           className="absolute left-[47.5%] top-[88.5%] text-3xl"
         >
           🎃
