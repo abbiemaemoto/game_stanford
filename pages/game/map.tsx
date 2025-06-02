@@ -152,7 +152,7 @@ export default function GamePage() {
           📝
         </Link>
         <Link
-          href="/calendar"
+          href="activities/9-early-winter-weekend/early-winter-weekend1"
           className="absolute left-[80%] top-[49%] text-2xl"
         >
           📅

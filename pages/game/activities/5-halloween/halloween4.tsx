@@ -14,7 +14,7 @@ export default function AnswerPage() {
 
     return (
       <div className="min-h-screen bg-[rgb(45,26,50)] p-8 relative">
-        <div className="absolute bottom-2 left-2s z-0">
+        <div className="absolute bottom-2 left-2 z-0">
           <div className="relative w-50 h-50 sm:w-50 sm:h-50 md:w-60 md:h-60 lg:w-80 lg:h-80">
             <Image
               src="/bed.png"
