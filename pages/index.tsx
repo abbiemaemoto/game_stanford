@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { Play } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useRouter } from "next/navigation"
+import { Play } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function StanfordWebsite() {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleSeniorYearClick = () => {
-    router.push("/instructions")
-  }
+    router.push("/instructions/intro1");
+  };
 
   return (
     <div className="min-h-screen relative flex flex-col">
@@ -68,26 +68,26 @@ export default function StanfordWebsite() {
       <style jsx>{`
         .senior-button {
           box-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
-                      0 0 40px rgba(255, 255, 255, 0.4),
-                      0 0 60px rgba(255, 255, 255, 0.2);
+            0 0 40px rgba(255, 255, 255, 0.4), 0 0 60px rgba(255, 255, 255, 0.2);
           animation: bounce-glow 2s ease-in-out infinite;
         }
-        
+
         @keyframes bounce-glow {
-          0%, 100% {
+          0%,
+          100% {
             transform: translateY(0);
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
-                        0 0 40px rgba(255, 255, 255, 0.4),
-                        0 0 60px rgba(255, 255, 255, 0.2);
+              0 0 40px rgba(255, 255, 255, 0.4),
+              0 0 60px rgba(255, 255, 255, 0.2);
           }
           50% {
             transform: translateY(-10px);
             box-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
-                        0 0 60px rgba(255, 255, 255, 0.6),
-                        0 0 90px rgba(255, 255, 255, 0.4);
+              0 0 60px rgba(255, 255, 255, 0.6),
+              0 0 90px rgba(255, 255, 255, 0.4);
           }
         }
       `}</style>
     </div>
-  )
+  );
 }
