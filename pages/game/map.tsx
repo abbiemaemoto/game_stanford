@@ -14,7 +14,7 @@ export default function GamePage() {
 
         {/* Emojis positioned relative to the image container */}
         <Link
-          href="activities/fortune-teller/fortune-teller1"
+          href="activities/24-fortune-teller/fortune-teller1"
           className="absolute left-[6%] top-[17%] text-3xl"
         >
           🔮
