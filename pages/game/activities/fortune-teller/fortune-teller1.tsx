@@ -14,7 +14,7 @@ export default function GraduationPage() {
   };
 
   useEffect(() => {
-    const duration = 3 * 1000; // 3 seconds
+    const duration = 1000; // 3 seconds
     const end = Date.now() + duration;
 
     const interval = setInterval(() => {

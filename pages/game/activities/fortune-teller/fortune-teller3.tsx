@@ -18,8 +18,8 @@ export default function AnswerPage() {
         <div className="absolute bottom-8 left-8">
           <div className="relative w-40 h-40 md:w-64 md:h-64">
             <Image
-              src="/student-dark.png"
-              alt="Thinking graduate student"
+              src="/happy_grad.png"
+              alt="Happy grad student"
               fill
               style={{ transform: "scaleX(-1)" }} // Reflect over y-axis
               className="object-contain"
