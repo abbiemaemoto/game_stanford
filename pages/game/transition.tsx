@@ -10,16 +10,16 @@ export default function AnswerPage() {
   };
 
   return (
-    <div className="h-screen bg-sky-200 flex flex-col items-center p-6 mt-2">
+    <div className="h-screen bg-sky-200 flex flex-col items-center p-6">
       {/* Header */}
-      <div className="w-full max-w-4xl">
+      <div className="w-full max-w-4xl pt-12">
         <h2 className="text-5xl font-bold text-center text-gray-800">
           Let’s move to the next square!
         </h2>
       </div>
 
       {/* Image */}
-      <div className="relative w-[550px] h-[550px] mt-2">
+      <div className="relative w-[600px] h-[600px] mt-4">
         <Image
           src="/tandem.png"
           alt="Students biking"
@@ -29,7 +29,7 @@ export default function AnswerPage() {
       </div>
 
       {/* Button */}
-      <div className="mt-2">
+      <div className="mt-4">
         <Button
           className="bg-red-600 hover:bg-red-700 text-white px-8 py-5 text-lg"
           onClick={handleContinue}

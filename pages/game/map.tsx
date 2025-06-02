@@ -116,7 +116,7 @@ export default function GamePage() {
           ☀️
         </Link>
         <Link
-          href="activities/backpack"
+          href="activities/1-fdoc/fdoc1"
           className="absolute left-[54%] top-[75%] text-3xl"
         >
           🎒
