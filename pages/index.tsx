@@ -3,6 +3,8 @@
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import "../pages/globals.css";
+
 
 export default function StanfordWebsite() {
   const router = useRouter();
@@ -54,13 +56,15 @@ export default function StanfordWebsite() {
             </Button>
 
             {/* Active Senior year button with bounce animation and glow */}
+
             <Button
-              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-lg font-medium flex items-center gap-2 senior-button"
               onClick={handleSeniorYearClick}
+              className="senior-button px-6 py-3 text-lg font-medium text-white bg-red-600 hover:bg-red-700 transition duration-300 flex items-center gap-2"
             >
               <Play className="w-5 h-5 fill-white" />
               Senior year
             </Button>
+
           </div>
         </div>
       </div>
