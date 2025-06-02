@@ -34,7 +34,7 @@ export default function PointsPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Option 1 */}
                 <div className="flex flex-col items-center">
-                <Card className="w-full max-w-sm bg-white border-2 border-red-600 shadow-2xl transform hover:scale-105 transition-transform">
+                <Card className="w-full max-w-sm bg-white border-2 border-red-600 shadow-1xl transform hover:scale-105 transition-transform">
                     <CardHeader className="text-center pb-2">
                     <CardTitle className="text-xl font-bold text-red-600">Option 1</CardTitle>
                     </CardHeader>
@@ -55,7 +55,7 @@ export default function PointsPage() {
   
             {/* Option 2 */}
             <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm bg-white border-2 border-red-500 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <Card className="w-full max-w-sm bg-white border-2 border-red-500 shadow-1xl transform hover:scale-105 transition-transform duration-300">
                 <CardHeader className="text-center pb-2">
                 <CardTitle className="text-xl font-bold text-red-600">Option 2</CardTitle>
                 </CardHeader>
@@ -65,7 +65,7 @@ export default function PointsPage() {
                 </p>
                 </CardContent>
             </Card>
-            <div className="mt-4 bg-white/80 rounded-lg p-3 border border-red-200">
+            <div className="mt-4 bg-white/100 rounded-lg p-3 border border-red-800">
                     <div className="flex justify-center space-x-4 text-sm font-semibold">
                         <span className="text-red-600">Health: +0</span>
                         <span className="text-green-600">Aura: +1</span>
@@ -78,7 +78,7 @@ export default function PointsPage() {
   
             {/* Option 3 */}
             <div className="flex flex-col items-center">
-              <Card className="w-full max-w-sm bg-white border-2 border-red-500 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              <Card className="w-full max-w-sm bg-white border-2 border-red-500 shadow-1xl transform hover:scale-105 transition-transform duration-300">
                   <CardHeader className="text-center pb-2">
                   <CardTitle className="text-xl font-bold text-red-600">Option 3</CardTitle>
                   </CardHeader>
