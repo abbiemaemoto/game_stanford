@@ -79,7 +79,7 @@ export default function PlaceholderPage() {
           </div>
           <div className="mt-12 text-center">
             <p className="text-2xl font-medium text-gray-800 p-4 bg-white/50 rounded-lg inline-block shadow-md">
-              Place your player token in the Narrative Lot parking spot corresponding to the option you chose.
+              Place your player token in the Narrative Lot parking spot corresponding to the option you chose. Click continue after all players have made their choice.
             </p>
           </div>
 

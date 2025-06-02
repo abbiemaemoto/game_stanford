@@ -9,7 +9,7 @@ export default function OptionPage() {
     const router = useRouter();
   
     const handleContinue = () => {
-      router.push("/game/activities/1-fdoc/fdoc3");
+      router.push("/game/activities/9-early-winter-weekend/early-winter-weekend3");
     };
 
     return (
@@ -18,8 +18,8 @@ export default function OptionPage() {
         <div className="absolute bottom-4 left-4 z-0">
           <div className="relative w-50 h-50 sm:w-50 sm:h-50 md:w-60 md:h-60 lg:w-70 lg:h-70">
             <Image
-              src="/selfie.png"
-              alt="student taking selfie"
+              src="/happy.png"
+              alt="excited"
               fill
               className="object-contain pointer-events-none"
             />
@@ -32,7 +32,8 @@ export default function OptionPage() {
           {" "}
           {/* Added padding to prevent overlap with image */}
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-            Let’s start the year off on the right foot with FDOC pictures. You’re running a little late for class though...
+          It's early winter quarter & it's the calm before the storm...
+          How should you make the most of your first weekend!
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Option 1 */}
@@ -43,7 +44,7 @@ export default function OptionPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
                   <p className="text-xl font-bold text-center text-gray-200">
-                    Wear your favorite tank top and roll out to Main Quad for the perfect MemChu photo. Who cares if you’re super late?
+                  Stay on campus! You reserved a pickleball court 
                   </p>
                 </CardContent>
               </Card>
@@ -57,7 +58,7 @@ export default function OptionPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
                   <p className="text-xl font-bold text-center text-gray-200">
-                    Snap a digi cam pic in front of your dorm with your roommate. You’ll only be 5 minutes late.
+                  Go hiking at Mt Tam! It’s beautiful this weekend
                   </p>
                 </CardContent>
               </Card>
@@ -71,7 +72,7 @@ export default function OptionPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
                   <p className="text-xl font-bold text-center text-gray-200">
-                    FDOC is overrated. Leave now, take a selfie on the way, and you’ll actually make it to class perfectly on-time.
+                  Go to the Frat Formal in Tahoe
                   </p>
                 </CardContent>
               </Card>

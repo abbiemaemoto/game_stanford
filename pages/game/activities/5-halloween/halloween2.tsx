@@ -16,7 +16,7 @@ export default function OptionPage() {
       <div className="min-h-screen bg-[rgb(45,26,50)] p-8 relative">
         {/* Student image in bottom left corner, reflected over y-axis */}
         <div className="absolute bottom-2 left-2 z-0">
-          <div className="relative w-80 h-80">
+          <div className="relative w-60 h-60">
             <Image
               src="/sad_hall.png"
               alt="sick"
@@ -74,6 +74,12 @@ export default function OptionPage() {
                 </CardContent>
               </Card>
             </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-2xl font-medium text-white p-4 bg-white/10 rounded-lg inline-block shadow-md">
+              Place your player token in the Narrative Lot parking spot corresponding to the option you chose. Click continue after all players have made their choice.
+            </p>
           </div>
 
           {/* Continue Button */}
