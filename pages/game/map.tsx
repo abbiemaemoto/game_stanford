@@ -32,19 +32,19 @@ export default function GamePage() {
           ⛷️
         </Link>
         <Link
-          href="activities/events"
+          href="activities/3-mascot/mascot1"
           className="absolute left-[72%] top-[10%] text-3xl"
         >
           🎄
         </Link>
         <Link
-          href="activities/stadium"
+          href="activities/7-axe/axe1"
           className="absolute left-[87%] top-[20%] text-3xl"
         >
           🪓
         </Link>
         <Link
-          href="activities/music"
+          href="activities/"
           className="absolute left-[67.5%] top-[32%] text-3xl"
         >
           🎶
