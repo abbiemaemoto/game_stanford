@@ -28,7 +28,8 @@ export default function AnswerPage() {
 
       <div className="max-w-6xl mx-auto pl-0 md:pl-32">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-          When was the last time Stanford won Big Game?
+          On a good traffic day, how long does it take to drive to Lake Tahoe
+          from Stanford campus?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-stretch mb-12">
           {/* Option 1 */}
@@ -40,14 +41,16 @@ export default function AnswerPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col items-center space-y-4 p-6 text-gray-600">
-                <p className="text-xl font-bold text-center text-white">2022</p>
+                <p className="text-xl font-bold text-center text-white">
+                  6 hours
+                </p>
               </CardContent>
             </Card>
           </div>
 
           {/* Option 2 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <Card className="w-full max-w-sm h-full bg-green-600 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 2
@@ -55,7 +58,7 @@ export default function AnswerPage() {
               </CardHeader>
               <CardContent className="flex flex-col items-center space-y-4 p-6">
                 <p className="text-xl font-bold text-center text-gray-200">
-                  2021
+                  4.5 hours
                 </p>
               </CardContent>
             </Card>
@@ -63,7 +66,7 @@ export default function AnswerPage() {
 
           {/* Option 3 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm h-full bg-green-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 3
@@ -71,7 +74,7 @@ export default function AnswerPage() {
               </CardHeader>
               <CardContent className="flex flex-col items-center space-y-4 p-6">
                 <p className="text-xl font-bold text-center text-gray-200">
-                  2020
+                  2 hours
                 </p>
               </CardContent>
             </Card>
@@ -87,7 +90,7 @@ export default function AnswerPage() {
               </CardHeader>
               <CardContent className="flex flex-col items-center space-y-4 p-6">
                 <p className="text-xl font-bold text-center text-gray-200">
-                  2019
+                  3.5 hours
                 </p>
               </CardContent>
             </Card>
@@ -98,11 +101,12 @@ export default function AnswerPage() {
         </h1>
         <h2 className="text-3xl md:text-3xl lg:text-4xl font-medium text-black leading-tight mt-6  mb-12">
           {
-            "You remembered a rare W. You’re looking like a Prodigy for historical recall under pressure. "
+            "You planned ahead and knew the drive would be 4.5 hours. Here’s some health for prioritizing fresh air, friendship, and a weekend off the grid."
           }
         </h2>
         <div className="flex justify-center space-x-4 text-4xl font-semibold">
-          <span className="text-blue-600">Prodigy: +2</span>
+          <span className="text-red-600">Health: +1</span>
+          <span className="text-green-600">Aura: +1</span>
         </div>
 
         {/* Continue Button */}
