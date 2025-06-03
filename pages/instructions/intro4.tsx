@@ -27,7 +27,7 @@ export default function TraitsInstructionsPage() {
 
       {/* Back Button */}
       <div className="absolute top-3 left-3 z-10">
-        <Link href="/instructions/final">
+        <Link href="/instructions/intro3">
           <Button
             variant="outline"
             size="sm"
