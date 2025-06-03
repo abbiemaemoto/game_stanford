@@ -8,7 +8,7 @@ export default function GymMinigame2() {
   const router = useRouter();
 
   const handleContinue = () => {
-    router.push("/game/activities/7-gym/gym3");
+    router.push("/game/transition");
   };
 
   return (
