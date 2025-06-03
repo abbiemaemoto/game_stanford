@@ -32,16 +32,16 @@ export default function PlaceholderPage() {
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           When was the last time Stanford won Big Game?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-stretch">
           {/* Option 1 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 1
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
+              <CardContent className="flex flex-col items-center space-y-4 p-6">
                 <p className="text-xl font-bold text-center text-gray-200">
                   2022
                 </p>
@@ -51,13 +51,13 @@ export default function PlaceholderPage() {
 
           {/* Option 2 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 2
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
+              <CardContent className="flex flex-col items-center space-y-4 p-6">
                 <p className="text-xl font-bold text-center text-gray-200">
                   2021
                 </p>
@@ -67,13 +67,13 @@ export default function PlaceholderPage() {
 
           {/* Option 3 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 3
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
+              <CardContent className="flex flex-col items-center space-y-4 p-6">
                 <p className="text-xl font-bold text-center text-gray-200">
                   2020
                 </p>
@@ -81,15 +81,15 @@ export default function PlaceholderPage() {
             </Card>
           </div>
 
-          {/* Option 3 */}
+          {/* Option 4 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 4
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
+              <CardContent className="flex flex-col items-center space-y-4 p-6">
                 <p className="text-xl font-bold text-center text-gray-200">
                   2019
                 </p>

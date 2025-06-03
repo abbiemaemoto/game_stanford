@@ -9,7 +9,7 @@ export default function PlaceholderPage() {
     const router = useRouter();
   
     const handleContinue = () => {
-      router.push("/game/activities/24-fortune-teller/fortune-teller3");
+      router.push("/game/activities/24-fortune-teller/fortune-teller4");
     };
 
     return (
@@ -31,7 +31,7 @@ export default function PlaceholderPage() {
           {" "}
           {/* Added padding to prevent overlap with image */}
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-            O all the places you'll go...let's see where you want to go next after you leave the Farm.
+            Your time here at Stanford is wrapping up. What is the legacy you hope to leave?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Option 1 */}
@@ -42,8 +42,7 @@ export default function PlaceholderPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
                   <p className="text-xl font-bold text-center text-gray-200">
-                    Apply to grad school! You're not quite ready to start a job and more school means more time to figure
-                    out life (& party!)
+                    Most likely to be invited back as a future Commencement speaker
                   </p>
                 </CardContent>
               </Card>
@@ -57,7 +56,7 @@ export default function PlaceholderPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
                   <p className="text-xl font-bold text-center text-gray-200">
-                    You're your own boss! Take a risk and start your own business. Y Combinator is calling your name!
+                    Most likely to become the next president of Stanford
                   </p>
                 </CardContent>
               </Card>
@@ -71,7 +70,7 @@ export default function PlaceholderPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
                   <p className="text-xl font-bold text-center text-gray-200">
-                    Head to NY and start your big corporate life! The 9-5 is a big change but the money is nice!
+                    Most likely to get a Stanford building named after them
                   </p>
                 </CardContent>
               </Card>
