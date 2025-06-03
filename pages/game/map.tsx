@@ -62,7 +62,7 @@ export default function GamePage() {
           🏋🏼
         </Link>
         <Link
-          href="activities/green"
+          href="activities/4-neighborhoods/neighborhoods1"
           className="absolute left-[45%] top-[48%] text-3xl"
         >
           🌳
@@ -92,7 +92,7 @@ export default function GamePage() {
           🌟
         </Link>
         <Link
-          href="activities/tech"
+          href="activities/6-phone/phone1"
           className="absolute left-[50.5%] top-[66%] text-3xl"
         >
           📱
