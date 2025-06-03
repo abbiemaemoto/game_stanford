@@ -33,14 +33,14 @@ export default function AnswerPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Option 1 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm bg-white border-2 border-green-600 shadow-2xl transform hover:scale-105 transition-transform">
+            <Card className="w-full max-w-sm h-full bg-green-600 border-2 border-white shadow-2xl transform hover:scale-105 transition-transform">
               <CardHeader className="text-center pb-2">
-                <CardTitle className="text-xl font-bold text-green-600">
+                <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 1
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col items-center space-y-4 p-6 h-48 text-gray-600">
-                <p className="text-xl font-bold text-center">
+              <CardContent className="flex flex-col items-center space-y-4 p-6 text-gray-600">
+                <p className="text-xl font-bold text-center text-white">
                   It represents El Palo Alto, the namesake of Palo Alto
                 </p>
               </CardContent>
@@ -49,14 +49,14 @@ export default function AnswerPage() {
 
           {/* Option 2 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm bg-white border-2 border-red-600 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <CardHeader className="text-center pb-2">
-                <CardTitle className="text-xl font-bold text-red-600">
+                <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 2
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col items-center space-y-4 p-6 h-48 text-gray-600">
-                <p className="text-xl font-bold text-center">
+              <CardContent className="flex flex-col items-center space-y-4 p-6">
+                <p className="text-xl font-bold text-center text-gray-200">
                   Redwood trees are native to Stanford’s campus
                 </p>
               </CardContent>
@@ -65,14 +65,14 @@ export default function AnswerPage() {
 
           {/* Option 3 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm bg-white border-2 border-red-600 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <CardHeader className="text-center pb-2">
-                <CardTitle className="text-xl font-bold text-red-600">
+                <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 3
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col items-center space-y-4 p-6 h-48 text-gray-600">
-                <p className="text-xl font-bold text-center">
+              <CardContent className="flex flex-col items-center space-y-4 p-6">
+                <p className="text-xl font-bold text-center text-gray-200">
                   It is a neutral mascot after a campus-wide vote eliminated all
                   animals for being too politically controversial
                 </p>
@@ -82,14 +82,14 @@ export default function AnswerPage() {
 
           {/* Option 4 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm bg-white border-2 border-red-600 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <CardHeader className="text-center pb-2">
-                <CardTitle className="text-xl font-bold text-red-600">
+                <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 4
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col items-center space-y-4 p-6 h-48 text-gray-600">
-                <p className="text-xl font-bold text-center">
+              <CardContent className="flex flex-col items-center space-y-4 p-6">
+                <p className="text-xl font-bold text-center text-gray-200">
                   It honors the founder’s favorite tree, which stood outside his
                   childhood home in Sacramento.
                 </p>

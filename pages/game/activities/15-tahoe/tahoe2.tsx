@@ -9,7 +9,7 @@ export default function GraduationPage() {
   const router = useRouter();
 
   const handleContinue = () => {
-    router.push("/game/activities/11-valentines/valentines2");
+    router.push("/game/activities/15-tahoe/tahoe3");
   };
 
   return (
@@ -38,11 +38,11 @@ export default function GraduationPage() {
       {/* Header Text */}
       <div className="pt-12 px-8 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
-          {"Happy Thursday! "}
+          {"Trivia @ the Arbor "}
         </h1>
         <h2 className="text-3xl md:text-3xl lg:text-4xl font-medium text-black leading-tight mt-6">
           {
-            "You're at the Arbor for trivia...Answering correctly gets you points"
+            "In your last winter quarter, it’s time to finally head out to Tahoe and learn how to ski! You and your friends are super excited for a snowy weekend. Getting there can be a pain though.."
           }
         </h2>
       </div>
