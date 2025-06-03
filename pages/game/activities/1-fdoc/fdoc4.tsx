@@ -47,9 +47,9 @@ export default function AnswerPage() {
 
             <div className="mt-4 bg-white rounded-lg p-3 border border-red-500">
             <div className="flex justify-center space-x-4 text-sm font-semibold">
-                <span className="text-red-600">Health: -2</span>
+                <span className="text-red-600">Health: +0</span>
                 <span className="text-green-600">Aura: +2</span>
-                <span className="text-blue-600">Prodigy: -1</span>
+                <span className="text-blue-600">Prodigy: +0</span>
             </div>
             </div>
         </div>
@@ -91,8 +91,8 @@ export default function AnswerPage() {
 
             <div className="mt-4 bg-white rounded-lg p-3 border border-red-500">
             <div className="flex justify-center space-x-4 text-sm font-semibold">
-                <span className="text-red-600">Health: +1</span>
-                <span className="text-green-600">Aura: -2</span>
+                <span className="text-red-600">Health: +0</span>
+                <span className="text-green-600">Aura: +0</span>
                 <span className="text-blue-600">Prodigy: +3</span>
             </div>
             </div>
