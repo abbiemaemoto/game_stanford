@@ -56,7 +56,7 @@ export default function GamePage() {
           🔍
         </Link>
         <Link
-          href="activities/7-gym/gym1"
+          href="activities/10-gym/gym1"
           className="absolute left-[32%] top-[50%] text-3xl"
         >
           🏋️
