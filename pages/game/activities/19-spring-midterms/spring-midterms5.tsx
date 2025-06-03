@@ -8,7 +8,7 @@ export default function AnswerPage() {
   const router = useRouter();
 
   const handleContinue = () => {
-    router.push("/game/transition");
+    router.push("/game/activities/19-spring-midterms/spring-midterms6");
   };
 
   return (
@@ -27,20 +27,26 @@ export default function AnswerPage() {
       </div>
 
       <div className="max-w-6xl mx-auto pl-0 md:pl-32">
+        {" "}
+        {/* Added padding to prevent overlap with image */}
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-          When was the last time Stanford won Big Game?
+          In the 2024 Stanford Marriage Pact, which major had the highest
+          proportion of students respond that they would rather cheat on an exam
+          than fail it?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-stretch mb-12">
           {/* Option 1 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-white shadow-2xl transform hover:scale-105 transition-transform">
+            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 1
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col items-center space-y-4 p-6 text-gray-600">
-                <p className="text-xl font-bold text-center text-white">2022</p>
+              <CardContent className="flex flex-col items-center space-y-4 p-6">
+                <p className="text-xl font-bold text-center text-gray-200">
+                  Computer Science
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -55,7 +61,7 @@ export default function AnswerPage() {
               </CardHeader>
               <CardContent className="flex flex-col items-center space-y-4 p-6">
                 <p className="text-xl font-bold text-center text-gray-200">
-                  2021
+                  Psychology
                 </p>
               </CardContent>
             </Card>
@@ -63,7 +69,7 @@ export default function AnswerPage() {
 
           {/* Option 3 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm h-full bg-green-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 3
@@ -71,7 +77,7 @@ export default function AnswerPage() {
               </CardHeader>
               <CardContent className="flex flex-col items-center space-y-4 p-6">
                 <p className="text-xl font-bold text-center text-gray-200">
-                  2020
+                  MS&E
                 </p>
               </CardContent>
             </Card>
@@ -79,7 +85,7 @@ export default function AnswerPage() {
 
           {/* Option 4 */}
           <div className="flex flex-col items-center">
-            <Card className="w-full max-w-sm h-full bg-red-800 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <Card className="w-full max-w-sm h-full bg-green-600 border-2 border-gold text-white shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <CardHeader className="text-center pb-2">
                 <CardTitle className="text-xl font-bold text-yellow-300">
                   Option 4
@@ -87,7 +93,7 @@ export default function AnswerPage() {
               </CardHeader>
               <CardContent className="flex flex-col items-center space-y-4 p-6">
                 <p className="text-xl font-bold text-center text-gray-200">
-                  2019
+                  STS
                 </p>
               </CardContent>
             </Card>
@@ -96,15 +102,9 @@ export default function AnswerPage() {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
           {"If you got it right..."}
         </h1>
-        <h2 className="text-3xl md:text-3xl lg:text-4xl font-medium text-black leading-tight mt-6  mb-12">
-          {
-            "You remembered a rare W. You’re looking like a Prodigy for historical recall under pressure. "
-          }
+        <h2 className="text-3xl md:text-3xl lg:text-4xl font-medium text-black leading-tight mt-6">
+          {"You know your classmates really well! We know you’d never cheat..."}
         </h2>
-        <div className="flex justify-center space-x-4 text-4xl font-semibold">
-          <span className="text-blue-600">Prodigy: +2</span>
-        </div>
-
         {/* Continue Button */}
         <div className="fixed bottom-8 right-10">
           <Button
