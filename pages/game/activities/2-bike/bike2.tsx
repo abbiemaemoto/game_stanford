@@ -88,10 +88,7 @@ export default function BikeMinigame2() {
             <div className="text-center animate-fade-in">
               <div className="bg-gradient-to-r from-green-100 to-emerald-100 border-2 border-green-500 rounded-2xl p-6 mb-6 shadow-lg">
                 <p className="text-3xl font-bold text-green-800 mb-2">
-                  🎉 Amazing! You found something green! 🎉
-                </p>
-                <p className="text-xl text-green-700">
-                  Your bike keys were attached to that green item!
+                  🎉 Amazing! Your bike keys were attached to that green item! 🎉
                 </p>
               </div>
               <p className="text-lg text-gray-600 animate-pulse">

@@ -17,7 +17,7 @@ export default function BikeMinigame1() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/bookstore.png')",
+          backgroundImage: "url('/bike-minigame.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
