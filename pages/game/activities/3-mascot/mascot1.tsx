@@ -50,8 +50,8 @@ export default function GraduationPage() {
       {/* Graduation Image - Bottom Center */}
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
         <Image
-          src="/graduation-ceremony.png"
-          alt="Graduation ceremony with graduates in caps and gowns sitting in a stadium"
+          src="/arbor.png"
+          alt="The arbor at Stanford where trivia takes place"
           width={0}
           height={0}
           className="w-[700px] h-auto object-cover"
