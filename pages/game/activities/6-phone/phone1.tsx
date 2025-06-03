@@ -47,7 +47,7 @@ export default function PhoneMinigame1() {
 
       {/* Floating Phone Animation */}
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-5">
-        <div className="animate-floating-phone">
+        <div className="animate-phone-flyaway">
           <div className="text-8xl">📱</div>
         </div>
       </div>
@@ -64,16 +64,26 @@ export default function PhoneMinigame1() {
 
       {/* CSS Animation Styles */}
       <style jsx>{`
-        .animate-floating-phone {
-          animation: float-phone 3s ease-in-out infinite;
+        .animate-phone-flyaway {
+          animation: phone-flyaway 4s ease-in-out forwards;
+          opacity: 1;
         }
 
-        @keyframes float-phone {
-          0%, 100% {
+        @keyframes phone-flyaway {
+          0%, 20% {
             transform: translateY(0) rotate(-5deg);
+            opacity: 1;
+            scale: 1;
           }
-          50% {
+          30% {
             transform: translateY(-20px) rotate(5deg);
+            opacity: 1;
+            scale: 1;
+          }
+          100% {
+            transform: translate(500px, -300px) rotate(45deg);
+            opacity: 0;
+            scale: 0.1;
           }
         }
       `}</style>

@@ -100,7 +100,7 @@ export default function PhoneMinigame2() {
                 </div>
 
                 <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-400 rounded-2xl p-8 mb-8 shadow-lg">
-                  <div className="text-xl text-gray-800 mb-6 leading-relaxed italic">
+                  <div className="text-2xl text-gray-800 mb-6 leading-relaxed italic">
                     "I sit where legacies clash and blend,<br/>
                     Where foes once fought, now students mend.<br/>
                     One half a symbol of bold school pride,<br/>
