@@ -5,33 +5,35 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export default function PlaceholderPage() {
+export default function OptionPage() {
     const router = useRouter();
   
     const handleContinue = () => {
-      router.push("/game/activities/24-fortune-teller/fortune-teller4");
+      router.push("/game/activities/21-bay-to-breakers/bay-to-breakers3");
     };
 
     return (
-      <div className="min-h-screen bg-sky-200 p-8 relative">
+      <div className="min-h-screen bg-[#6A5ACD] p-8 relative">
+
         {/* Student image in bottom left corner, reflected over y-axis */}
-        <div className="absolute bottom-8 left-8">
-          <div className="relative w-40 h-40 md:w-64 md:h-64">
-            <Image
-              src="/student-dark.png"
-              alt="Thinking graduate student"
-              fill
-              style={{ transform: "scaleX(-1)" }} // Reflect over y-axis
-              className="object-contain"
-            />
-          </div>
-        </div>
+       
+            <div className="absolute bottom-0 left-0">
+                <Image
+                src="/costume.png"
+                alt="Bottom-left image"
+                width={400}
+                height={400}
+                className="object-contain"
+                />
+            </div>
+          
+
   
-        <div className="max-w-6xl mx-auto pl-0 md:pl-32">
+        <div className="max-w-6xl mx-auto pl-0 md:pl-32 pt-12">
           {" "}
           {/* Added padding to prevent overlap with image */}
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-            Your time here at Stanford is wrapping up. What is the legacy you hope to leave?
+          <h2 className="text-3xl font-bold text-center mb-12 text-white">
+          Go big or go home. Pick a costume for your final B2B debut on the Oval.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Option 1 */}
@@ -42,7 +44,7 @@ export default function PlaceholderPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
                   <p className="text-xl font-bold text-center text-gray-200">
-                    Most likely to be invited back as a future Commencement speaker
+                  Re-use your Halloween costume and be fairies with your friend group!
                   </p>
                 </CardContent>
               </Card>
@@ -56,7 +58,7 @@ export default function PlaceholderPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
                   <p className="text-xl font-bold text-center text-gray-200">
-                    Most likely to become the next president of Stanford
+                  Get HUGE inflatable costumes.
                   </p>
                 </CardContent>
               </Card>
@@ -70,14 +72,14 @@ export default function PlaceholderPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
                   <p className="text-xl font-bold text-center text-gray-200">
-                    Most likely to get a Stanford building named after them
+                  Your alarm went off but you’re hungover and sleep deprived...hit snooze.
                   </p>
                 </CardContent>
               </Card>
             </div>
           </div>
           <div className="mt-12 text-center">
-            <p className="text-2xl font-medium text-gray-800 p-4 bg-white/50 rounded-lg inline-block shadow-md">
+            <p className="text-2xl font-medium text-gray-800 p-4 bg-white/90 rounded-lg inline-block shadow-md">
               Place your player token in the Narrative Lot parking spot corresponding to the option you chose. Click continue after all players have made their choice.
             </p>
           </div>

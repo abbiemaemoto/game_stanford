@@ -20,7 +20,7 @@ export default function GamePage() {
           🔮
         </Link>
         <Link
-          href="activities/drama"
+          href="activities/13-formal/formal1"
           className="absolute left-[47%] top-[28%] text-3xl"
         >
           🕺
@@ -80,7 +80,7 @@ export default function GamePage() {
           🍽️
         </Link>
         <Link
-          href="activities/running"
+          href="activities/21-bay-to-breakers/bay-to-breakers1"
           className="absolute left-[60%] top-[32%] text-3xl"
         >
           🏃🏻‍♀️
@@ -110,7 +110,7 @@ export default function GamePage() {
           🚲
         </Link>
         <Link
-          href="activities/sunshine"
+          href="activities/17-admit-weekend/admit-weekend1s"
           className="absolute left-[56%] top-[70%] text-3xl"
         >
           ☀️

@@ -5,33 +5,35 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export default function PlaceholderPage() {
+export default function OptionPage() {
     const router = useRouter();
   
     const handleContinue = () => {
-      router.push("/game/activities/24-fortune-teller/fortune-teller4");
+      router.push("/game/activities/17-admit-weekend/admit-weekend3");
     };
 
     return (
       <div className="min-h-screen bg-sky-200 p-8 relative">
+
         {/* Student image in bottom left corner, reflected over y-axis */}
-        <div className="absolute bottom-8 left-8">
-          <div className="relative w-40 h-40 md:w-64 md:h-64">
+        <div className="absolute bottom-4 left-4 z-0">
+          <div className="relative w-70 h-70 sm:w-70 sm:h-70 md:w-80 md:h-80 lg:w-90 lg:h-90">
             <Image
-              src="/student-dark.png"
-              alt="Thinking graduate student"
+              src="/admit.png"
+              alt="pondering"
               fill
-              style={{ transform: "scaleX(-1)" }} // Reflect over y-axis
-              className="object-contain"
+              className="object-contain pointer-events-none"
             />
           </div>
         </div>
+
+
   
-        <div className="max-w-6xl mx-auto pl-0 md:pl-32">
+        <div className="max-w-6xl mx-auto pl-0 md:pl-32 pt-12">
           {" "}
           {/* Added padding to prevent overlap with image */}
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
-            Your time here at Stanford is wrapping up. What is the legacy you hope to leave?
+          WWYD during Admit Weekend?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Option 1 */}
@@ -42,7 +44,7 @@ export default function PlaceholderPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
                   <p className="text-xl font-bold text-center text-gray-200">
-                    Most likely to be invited back as a future Commencement speaker
+                  Host a ProFro! Its so cute to see the new admits experiencing THE BEST SCHOOL ON EARTH
                   </p>
                 </CardContent>
               </Card>
@@ -56,7 +58,7 @@ export default function PlaceholderPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
                   <p className="text-xl font-bold text-center text-gray-200">
-                    Most likely to become the next president of Stanford
+                  Heckle at the high schoolers. They’re clogging my path to class.
                   </p>
                 </CardContent>
               </Card>
@@ -70,14 +72,14 @@ export default function PlaceholderPage() {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center space-y-4 p-6 h-48">
                   <p className="text-xl font-bold text-center text-gray-200">
-                    Most likely to get a Stanford building named after them
+                  Ignorance is bliss. Say hi to a Profro on your way to the airport- you're escaping to Vegas!
                   </p>
                 </CardContent>
               </Card>
             </div>
           </div>
           <div className="mt-12 text-center">
-            <p className="text-2xl font-medium text-gray-800 p-4 bg-white/50 rounded-lg inline-block shadow-md">
+            <p className="text-2xl font-medium text-gray-800 p-4 bg-white/90 rounded-lg inline-block shadow-md">
               Place your player token in the Narrative Lot parking spot corresponding to the option you chose. Click continue after all players have made their choice.
             </p>
           </div>
