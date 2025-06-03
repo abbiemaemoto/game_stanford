@@ -27,7 +27,7 @@ export default function FinalInstructionsPage() {
 
       {/* Back Button */}
       <div className="absolute top-3 left-3 z-10">
-        <Link href="/instructions/next">
+        <Link href="/instructions/intro2">
           <Button
             variant="outline"
             size="sm"
