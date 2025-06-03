@@ -104,7 +104,7 @@ export default function GamePage() {
           ❤️
         </Link>
         <Link
-          href="activities/bike"
+          href="activities/2-bike/bike1"
           className="absolute left-[50%] top-[72%] text-3xl"
         >
           🚲
