@@ -5,6 +5,12 @@ import Link from "next/link";
 export default function GamePage() {
   return (
     <div className="min-h-screen w-full bg-white flex items-start justify-center overflow-hidden p-4">
+      <Link
+        href="/instructions/intro1"
+        className="fixed top-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow-md transition"
+      >
+        Help
+      </Link>
       <div className="relative w-[70vw]">
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Map%21%20%281%29.png-Igpgi4AoxhkFmQeVgXmKGYSLktzGVZ.jpeg"
