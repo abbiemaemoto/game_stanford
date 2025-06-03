@@ -27,7 +27,7 @@ export default function WinterShareout2() {
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-center items-center p-8">
         {/* Main Content Box */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-10 max-w-5xl mx-auto shadow-2xl border border-blue-200">
+        <div className="bg-white/40 backdrop-blur-sm rounded-2xl p-10 max-w-5xl mx-auto shadow-2xl border border-blue-200">
           <div className="text-center mb-8">
             <h1 className="text-3xl md:text-4xl font-bold text-blue-800 mb-8 leading-tight">
               As you begin to pack for your last spring break trip, you

@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
@@ -9,7 +8,7 @@ export default function PointsPage() {
     const router = useRouter();
   
     const handleContinue = () => {
-      router.push("/game/transition");
+      router.push("/game/activities/24-fortune-teller/spring-shareout1");
     };
 
     return (
