@@ -44,22 +44,22 @@ export default function GamePage() {
           🪓
         </Link>
         <Link
-          href="activities/"
+          href="activities/18-frost-fest/frost-fest1"
           className="absolute left-[67.5%] top-[32%] text-3xl"
         >
           🎶
         </Link>
         <Link
-          href="activities/search"
+          href="activities/16-winter-finals/winter-finals1"
           className="absolute left-[30%] top-[42%] text-3xl"
         >
           🔍
         </Link>
         <Link
-          href="activities/fun"
+          href="activities/7-gym/gym1"
           className="absolute left-[32%] top-[50%] text-3xl"
         >
-          🏋🏼
+          🏋️
         </Link>
         <Link
           href="activities/4-neighborhoods/neighborhoods1"
@@ -68,13 +68,13 @@ export default function GamePage() {
           🌳
         </Link>
         <Link
-          href="activities/moon"
+          href="activities/14-moon/moon1"
           className="absolute left-[57%] top-[40%] text-3xl"
         >
           🌕
         </Link>
         <Link
-          href="activities/dinner"
+          href="activities/22-dinner-on-the-quad/dinner-on-the-quad1"
           className="absolute left-[48%] top-[41%] text-3xl"
         >
           🍽️
@@ -128,19 +128,19 @@ export default function GamePage() {
           🎃
         </Link>
         <Link
-          href="activities/bubbles"
+          href="activities/20-dunch/dunch1"
           className="absolute left-[40%] top-[84%] text-3xl"
         >
           🫧
         </Link>
         <Link
-          href="/landmark"
+          href="activities/12-winter-midterms/winter-midterms1"
           className="absolute left-[58.5%] top-[85.5%] text-3xl"
         >
           🪨
         </Link>
         <Link
-          href="/academics"
+          href="activities/8-fall-finals/fall-finals1"
           className="absolute left-[66%] top-[60.5%] text-3xl"
         >
           📚
