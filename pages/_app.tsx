@@ -16,6 +16,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const tryStartAudio = () => {
       if (!audioStarted && isValidRoute && audioRef.current) {
+        audioRef.current.volume = 0.2;
         audioRef.current.play().catch((err) => console.warn("Autoplay blocked:", err));
         setAudioStarted(true);
       }
