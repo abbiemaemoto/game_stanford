@@ -1,13 +1,30 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-
+import { useEffect, useRef } from "react";
 
 export default function StoryPage() {
   const router = useRouter();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.75;
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch((err) =>
+        console.warn("Autoplay may be blocked:", err)
+      );
+    }
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, []);
 
   const handleContinue = () => {
     router.push("/game/activities/9-early-winter-weekend/early-winter-weekend2");
@@ -15,13 +32,28 @@ export default function StoryPage() {
 
   return (
     <div className="min-h-screen bg-sky-200 relative overflow-hidden pt-8 md:pt-16 lg:pt-20">
+      {/* Audio playback */}
+      <audio ref={audioRef} src="/weekend.mp3" hidden preload="auto" />
+
       {/* Cloud Images */}
       <div className="absolute top-12 left-8">
-        <Image src="/cloud.webp" alt="Decorative cloud" width={240} height={160} className="opacity-80" />
+        <Image
+          src="/cloud.webp"
+          alt="Decorative cloud"
+          width={240}
+          height={160}
+          className="opacity-80"
+        />
       </div>
 
       <div className="absolute top-12 right-8">
-        <Image src="/cloud.webp" alt="Decorative cloud" width={240} height={160} className="opacity-80" />
+        <Image
+          src="/cloud.webp"
+          alt="Decorative cloud"
+          width={240}
+          height={160}
+          className="opacity-80"
+        />
       </div>
 
       {/* Header Text */}
@@ -34,19 +66,17 @@ export default function StoryPage() {
         </h2>
       </div>
 
-      {/* student running to class */}
-        <div className="pt-10 flex justify-center">
+      {/* student image */}
+      <div className="pt-10 flex justify-center">
         <Image
-            src="/happy.png"
-            alt="excited students"
-            width={0}
-            height={0}
-            className="w-[300px] sm:w-[350px] md:w-[400px] lg:w-[450px] h-auto object-cover"
-            priority
+          src="/happy.png"
+          alt="excited students"
+          width={0}
+          height={0}
+          className="w-[300px] sm:w-[350px] md:w-[400px] lg:w-[450px] h-auto object-cover"
+          priority
         />
-        </div>
-
-
+      </div>
 
       {/* Continue Button */}
       <div className="fixed bottom-8 right-10">
