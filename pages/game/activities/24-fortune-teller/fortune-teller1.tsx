@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,15 @@ export default function GraduationPage() {
   };
 
   useEffect(() => {
-    const duration = 1000; // 3 seconds
+    // Play audio
+    const audio = new Audio("/yay.mp3"); // Make sure the file is in public/
+    audio.volume = 0.75; // 75% volume
+    audio.play().catch((err) => {
+      console.warn("Autoplay was prevented:", err);
+    });
+
+    // Confetti
+    const duration = 1000;
     const end = Date.now() + duration;
 
     const interval = setInterval(() => {
@@ -37,7 +45,6 @@ export default function GraduationPage() {
       <div className="absolute top-12 left-8">
         <Image src="/cloud.webp" alt="Decorative cloud" width={120} height={80} className="opacity-80" />
       </div>
-
       <div className="absolute top-12 right-8">
         <Image src="/cloud.webp" alt="Decorative cloud" width={120} height={80} className="opacity-80" />
       </div>
@@ -56,7 +63,7 @@ export default function GraduationPage() {
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
         <Image
           src="/graduation-ceremony.png"
-          alt="Graduation ceremony with graduates in caps and gowns sitting in a stadium"
+          alt="Graduation ceremony"
           width={0}
           height={0}
           className="w-[700px] h-auto object-cover"

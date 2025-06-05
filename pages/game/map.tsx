@@ -71,7 +71,7 @@ export default function GamePage() {
         <Link href="activities/12-winter-midterms/winter-midterms1" className="absolute left-[58.5%] top-[85.5%] text-3xl">🪨</Link>
         <Link href="activities/8-fall-finals/fall-finals1" className="absolute left-[66%] top-[60.5%] text-3xl">📚</Link>
         <Link href="activities/19-spring-midterms/spring-midterms1" className="absolute left-[62.5%] top-[62%] text-3xl">📝</Link>
-        <Link href="activities/9-early-winter-weekend/early-winter-weekend1" className="absolute left-[80%] top-[49%] text-2xl">📅</Link>
+        <Link href="activities/9-early-winter-weekend/early-winter-weekend1" className="absolute left-[80%] top-[49%] text-2xl">🗓️</Link>
       </div>
     </div>
   );
