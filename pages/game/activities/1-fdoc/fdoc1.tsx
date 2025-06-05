@@ -1,13 +1,30 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-
+import { useEffect, useRef } from "react";
 
 export default function StoryPage() {
   const router = useRouter();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.75;
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch((err) =>
+        console.warn("Autoplay may have been blocked:", err)
+      );
+    }
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, []);
 
   const handleContinue = () => {
     router.push("/game/activities/1-fdoc/fdoc2");
@@ -15,6 +32,14 @@ export default function StoryPage() {
 
   return (
     <div className="min-h-screen bg-sky-200 relative overflow-hidden">
+      {/* Play fdoc_music.mp3 on load */}
+      <audio
+        ref={audioRef}
+        src="/fdoc_music.mp3"
+        hidden
+        preload="auto"
+      />
+
       {/* Cloud Images */}
       <div className="absolute top-12 left-8">
         <Image src="/cloud.webp" alt="Decorative cloud" width={120} height={80} className="opacity-80" />
@@ -34,19 +59,17 @@ export default function StoryPage() {
         </h2>
       </div>
 
-      {/* student running to class */}
-        <div className="pt-10 flex justify-center">
+      {/* Student running image */}
+      <div className="pt-10 flex justify-center">
         <Image
-            src="/running.png"
-            alt="student late to class"
-            width={0}
-            height={0}
-            className="w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] h-auto object-cover"
-            priority
+          src="/running.png"
+          alt="student late to class"
+          width={0}
+          height={0}
+          className="w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] h-auto object-cover"
+          priority
         />
-        </div>
-
-
+      </div>
 
       {/* Continue Button */}
       <div className="fixed bottom-8 right-10">
