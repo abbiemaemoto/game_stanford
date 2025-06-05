@@ -64,7 +64,7 @@ export default function GamePage() {
         <Link href="activities/6-phone/phone1" className="absolute left-[50.5%] top-[66%] text-3xl">📱</Link>
         <Link href="activities/11-valentines/valentines1" className="absolute left-[43%] top-[71%] text-3xl">❤️</Link>
         <Link href="activities/2-bike/bike1" className="absolute left-[50%] top-[72%] text-3xl">🚲</Link>
-        <Link href="activities/17-admit-weekend/admit-weekend1s" className="absolute left-[56%] top-[70%] text-3xl">☀️</Link>
+        <Link href="activities/17-admit-weekend/admit-weekend1" className="absolute left-[56%] top-[70%] text-3xl">☀️</Link>
         <Link href="activities/1-fdoc/fdoc1" className="absolute left-[54%] top-[75%] text-3xl">🎒</Link>
         <Link href="activities/5-halloween/halloween1" className="absolute left-[47.5%] top-[88.5%] text-3xl">🎃</Link>
         <Link href="activities/20-dunch/dunch1" className="absolute left-[40%] top-[84%] text-3xl">🫧</Link>
