@@ -1,55 +1,85 @@
 "use client";
 
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { useGraduationMusic } from "@/components/GraduationMusicProvider"; // ✅ import context
+import { Button } from "@/components/ui/button";
+
+const instructions = [
+  "🧮 Add up your total points in each category: Aura, Prodigy, and Health.",
+  "🃏 Place the Future Cards face down. There should be 3 decks—one for each category.",
+  "🎂 The player with the next upcoming birthday draws first. Each player will draw one card from each of the 3 Future Card decks, going clockwise.",
+  <>
+    📊 Each Future Card includes 3 tiers:
+    <ul className="list-disc list-inside ml-6 mt-4 space-y-2 text-left text-xl font-semibold">
+      <li>🟤 <strong>Common</strong>: If you have <strong>0–4</strong> points in a category</li>
+      <li>🔵 <strong>Rare</strong>: If you have <strong>5–8</strong> points</li>
+      <li>🟣 <strong>Legendary</strong>: If you have <strong>9+</strong> points</li>
+      <li>
+        For example, if you have <strong>3 Aura points</strong>, you’ll pick from the <strong>🟤 Common</strong> tier on the Aura card you drew.
+      </li>
+    </ul>
+  </>,
+  "🎯 Within your assigned tier, choose one of the 3 options you like the most.",
+  "📣 Once everyone has made their choices, share your three Future outcomes aloud with the group!",
+  "✅ When you're ready, click 'Continue' to complete the game.",
+];
 
 export default function StoryPage() {
   const router = useRouter();
+  const [step, setStep] = useState(0);
+
+  const handleNext = () => {
+    if (step < instructions.length - 1) setStep(step + 1);
+  };
+
+  const handleBack = () => {
+    if (step > 0) setStep(step - 1);
+  };
 
   const handleContinue = () => {
     router.push("/game/commencement/end");
   };
 
   return (
-    <div className="min-h-screen bg-sky-200 relative overflow-hidden">
-      <div className="pt-10 px-8 text-center">
-        <h1 className="text-3xl md:text-3xl lg:text-5xl font-bold text-black leading-tight mt-6">
-          {"Welcome to the final milestone of the Game of Stanford"}
-        </h1>
-        <h2 className="text-3xl md:text-3xl lg:text-3xl font-bold text-black leading-tight mt-10">
-          {"Read these instructions to determine what the future holds for you."}
-        </h2>
+    <div className="min-h-screen bg-sky-200 flex flex-col items-center justify-center px-6 text-center">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
+        Welcome to the final milestone of the Game of Stanford
+      </h1>
+      <h2 className="text-xl md:text-2xl lg:text-3xl text-black mb-8">
+        Read these instructions to discover what the future holds for you.
+      </h2>
+
+      <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-2xl min-h-[300px] flex items-center justify-center text-black">
+        <div className="text-2xl md:text-3xl font-bold leading-relaxed">
+          {instructions[step]}
+        </div>
       </div>
 
-      {/* Instructions */}
-      <ol className="mt-8 text-left text-lg md:text-xl lg:text-xl font-medium text-black max-w-7xl mx-auto list-decimal list-inside space-y-4">
-        <li>Add up your total points in each category (Aura, Prodigy, Health)</li>
-        <li>Place the Future Cards face down. There should be 3 decks, one for each category.</li>
-        <li>Each player will randomly draw one card from each deck. Start with the person with the nearest birthday, and continue clockwise.</li>
-        <li>
-          On each of the Future Cards, you will see 3 tiers (Common, Rare, and Legendary). For each point category:
-          <ul className="list-disc list-inside ml-6 mt-2 space-y-2">
-            <li>If you have 0–4 points, you will be picking from the "Common" tier.</li>
-            <li>If you have 5–8 points, you will be picking from the "Rare" tier.</li>
-            <li>If you have 9+ points, you will be picking from the "Legendary" tier.</li>
-            <li>As an example, if you have 3 Aura points, you will be picking from the "Common" tier on your selected Future Aura card.</li>
-          </ul>
-        </li>
-        <li>Within your designated tier, pick one of the 3 options you like most!</li>
-        <li>Once you are done selecting an option from each of your three Future Cards, share out loud with the group! These are the accomplishments that are "in the cards" for you!</li>
-        <li>After everyone has shared, click "Continue".</li>
-      </ol>
-
-      <div className="fixed bottom-8 right-10">
+      {/* Navigation */}
+      <div className="mt-8 flex gap-4">
         <Button
-          className="bg-red-600 hover:bg-red-700 text-white px-8 py-5 text-lg"
-          onClick={handleContinue}
+          variant="outline"
+          className="px-6 py-3 text-md"
+          onClick={handleBack}
+          disabled={step === 0}
         >
-          Continue
+          Back
         </Button>
+        {step < instructions.length - 1 ? (
+          <Button
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-md"
+            onClick={handleNext}
+          >
+            Next
+          </Button>
+        ) : (
+          <Button
+            className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-md"
+            onClick={handleContinue}
+          >
+            Continue
+          </Button>
+        )}
       </div>
     </div>
   );
