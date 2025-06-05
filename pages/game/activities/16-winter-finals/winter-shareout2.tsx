@@ -1,11 +1,27 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function WinterShareout2() {
   const router = useRouter();
+
+  useEffect(() => {
+    const audio = new Audio("/winter_music.mp3");
+    audio.volume = 0.75;
+    audio.loop = false;
+
+    audio.play().catch(() => {
+      // Ignore autoplay block if user hasn’t interacted
+    });
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   const handleStartSpringQuarter = () => {
     router.push("/game/transition");
@@ -15,7 +31,7 @@ export default function WinterShareout2() {
     <div className="min-h-screen relative overflow-hidden">
       {/* Background with spring colors */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-green-50 to-yellow-100" />
-      
+
       {/* Decorative spring elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-10 text-3xl animate-bounce">🌸</div>
@@ -26,7 +42,6 @@ export default function WinterShareout2() {
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-center items-center p-8">
-        {/* Main Content Box */}
         <div className="bg-white/40 backdrop-blur-sm rounded-2xl p-10 max-w-5xl mx-auto shadow-2xl border border-blue-200">
           <div className="text-center mb-8">
             <h1 className="text-3xl md:text-4xl font-bold text-blue-800 mb-8 leading-tight">
@@ -45,14 +60,12 @@ export default function WinterShareout2() {
               </p>
             </div>
 
-            {/* Decorative elements */}
             <div className="flex justify-center items-center space-x-8 mb-8">
               <div className="text-4xl">👫</div>
               <div className="text-4xl">💝</div>
               <div className="text-4xl">🏛️</div>
             </div>
 
-            {/* Memory prompts */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 text-left">
               <div className="bg-green-50 border border-green-200 rounded-xl p-4">
                 <p className="text-sm text-green-700">🎉 That spontaneous adventure that became legendary...</p>
@@ -68,7 +81,6 @@ export default function WinterShareout2() {
               </div>
             </div>
 
-            {/* Stanford Tree mascot */}
             <div className="flex justify-center mb-8">
               <div className="text-6xl">🌲</div>
             </div>
@@ -87,4 +99,4 @@ export default function WinterShareout2() {
       </div>
     </div>
   );
-} 
+}

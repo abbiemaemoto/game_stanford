@@ -1,11 +1,27 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function WinterShareout1() {
   const router = useRouter();
+
+  useEffect(() => {
+    const audio = new Audio("/transition.mp3");
+    audio.volume = 0.75;
+    audio.loop = false;
+
+    audio.play().catch(() => {
+      // ignore autoplay block
+    });
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   const handleContinue = () => {
     router.push("/game/activities/16-winter-finals/winter-shareout2");
@@ -15,7 +31,7 @@ export default function WinterShareout1() {
     <div className="min-h-screen relative overflow-hidden">
       {/* Background with winter to spring transition */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-green-50 to-yellow-100" />
-      
+
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 text-4xl animate-bounce">❄️</div>
@@ -27,7 +43,6 @@ export default function WinterShareout1() {
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-center items-center p-8">
-        {/* Main Content Box */}
         <div className="bg-white/40 backdrop-blur-sm rounded-2xl p-10 max-w-4xl mx-auto shadow-2xl border border-blue-200">
           <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-blue-800 mb-8 leading-tight">
@@ -35,7 +50,6 @@ export default function WinterShareout1() {
               spring break is right around the corner...
             </h1>
 
-            {/* Winter to Spring transition illustration */}
             <div className="flex justify-center items-center mb-8 space-x-8">
               <div className="relative">
                 <div className="text-6xl">❄️</div>
@@ -44,7 +58,6 @@ export default function WinterShareout1() {
               <div className="text-6xl">🌴</div>
             </div>
 
-            {/* Reflection Sign */}
             <div className="bg-gradient-to-r from-amber-100 to-orange-100 border-2 border-amber-400 rounded-2xl p-6 mb-8 shadow-lg max-w-md mx-auto">
               <div className="text-amber-800 font-bold text-xl">Time to Reflect!</div>
             </div>
@@ -63,4 +76,4 @@ export default function WinterShareout1() {
       </div>
     </div>
   );
-} 
+}

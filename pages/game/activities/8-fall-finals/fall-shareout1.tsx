@@ -1,11 +1,30 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 
 export default function FallShareout1() {
   const router = useRouter();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.75;
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch((err) =>
+        console.warn("Autoplay blocked:", err)
+      );
+    }
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, []);
 
   const handleContinue = () => {
     router.push("/game/activities/8-fall-finals/fall-shareout2");
@@ -13,6 +32,9 @@ export default function FallShareout1() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
+      {/* Audio */}
+      <audio ref={audioRef} src="/transition.mp3" hidden preload="auto" />
+
       {/* Background with fall colors */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-amber-50 to-yellow-100" />
       
@@ -26,7 +48,6 @@ export default function FallShareout1() {
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-center items-center p-8">
-        {/* Main Content Box */}
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-10 max-w-4xl mx-auto shadow-2xl border border-orange-200">
           <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-amber-800 mb-8 leading-tight">
@@ -63,4 +84,4 @@ export default function FallShareout1() {
       </div>
     </div>
   );
-} 
+}

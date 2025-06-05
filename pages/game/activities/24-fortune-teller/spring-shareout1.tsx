@@ -1,11 +1,26 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function SpringShareout1() {
   const router = useRouter();
+
+  useEffect(() => {
+    const audio = new Audio("/transition.mp3");
+    audio.volume = 0.75;
+    audio.loop = false;
+    audio.play().catch(() => {
+      // autoplay might be blocked on first visit
+    });
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   const handleContinue = () => {
     router.push("/game/activities/24-fortune-teller/spring-shareout2");
@@ -63,4 +78,4 @@ export default function SpringShareout1() {
       </div>
     </div>
   );
-} 
+}
