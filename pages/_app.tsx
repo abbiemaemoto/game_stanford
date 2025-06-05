@@ -1,68 +1,105 @@
 // pages/_app.tsx
 import type { AppProps } from "next/app";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+
+let gradAudio: HTMLAudioElement | null = null;
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [audioStarted, setAudioStarted] = useState(false);
 
-  const validRoutes = ["/", ...Array.from({ length: 6 }, (_, i) => `/instructions/intro${i}`)];
-  const isValidRoute = validRoutes.includes(router.pathname);
-  const isFinalPage = router.pathname === "/instructions/intro5";
+  const kidsAudioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Start music on any user interaction
+  const kidsRoutes = ["/", ...Array.from({ length: 6 }, (_, i) => `/instructions/intro${i}`)];
+  const isKidsRoute = kidsRoutes.includes(router.pathname);
+  const isKidsFinalPage = router.pathname === "/instructions/intro5";
+
+  const commencementPages = [
+    "/game/commencement/intro",
+    "/game/commencement/p1",
+    "/game/commencement/p2",
+    "/game/commencement/p3",
+    "/game/commencement/p4",
+    "/game/commencement/p5",
+    "/game/commencement/p6",
+  ];
+  const isCommencementRoute = commencementPages.includes(router.pathname);
+  const isGradFinalPage = router.pathname === "/game/commencement/end";
+
+  // 🎵 Start kids music
   useEffect(() => {
-    const tryStartAudio = () => {
-      if (!audioStarted && isValidRoute && audioRef.current) {
-        audioRef.current.volume = 0.2;
-        audioRef.current.play().catch((err) => console.warn("Autoplay blocked:", err));
-        setAudioStarted(true);
+    const startKidsAudio = () => {
+      if (isKidsRoute && kidsAudioRef.current && kidsAudioRef.current.paused) {
+        kidsAudioRef.current.volume = 0.2;
+        kidsAudioRef.current.play().catch((err) => console.warn("Kids autoplay blocked:", err));
       }
     };
 
-    window.addEventListener("click", tryStartAudio, { once: true });
-    window.addEventListener("keydown", tryStartAudio, { once: true });
+    window.addEventListener("click", startKidsAudio, { once: true });
+    window.addEventListener("keydown", startKidsAudio, { once: true });
 
     return () => {
-      window.removeEventListener("click", tryStartAudio);
-      window.removeEventListener("keydown", tryStartAudio);
+      window.removeEventListener("click", startKidsAudio);
+      window.removeEventListener("keydown", startKidsAudio);
     };
-  }, [audioStarted, isValidRoute]);
+  }, [isKidsRoute]);
 
-  // Stop music if leaving allowed pages
+  // 🛑 Stop kids music when leaving
   useEffect(() => {
-    if (!isValidRoute && audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
+    if (!isKidsRoute && kidsAudioRef.current) {
+      kidsAudioRef.current.pause();
+      kidsAudioRef.current.currentTime = 0;
     }
-  }, [isValidRoute]);
+  }, [isKidsRoute]);
 
-  // Replay if music ends before final page
+  // 🎓 Play grad music only once across /commencement/intro to p6
   useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
+    const shouldStart = router.pathname === "/game/commencement/intro";
+    const shouldStop = !isCommencementRoute || isGradFinalPage;
 
-    const handleEnded = () => {
-      if (!isFinalPage) {
-        audio.play().catch(() => {});
+    // Start once
+    const tryPlay = () => {
+      if (!gradAudio) {
+        gradAudio = new Audio("/grad_music.mp3");
+        gradAudio.volume = 0.75;
+        gradAudio.loop = false;
+
+        gradAudio.addEventListener("ended", () => {
+          if (!isGradFinalPage) {
+            gradAudio?.play().catch(() => {});
+          }
+        });
+      }
+
+      if (gradAudio.paused && shouldStart) {
+        gradAudio.play().catch((err) => console.warn("Grad autoplay blocked:", err));
       }
     };
 
-    audio.addEventListener("ended", handleEnded);
+    if (shouldStart) {
+      window.addEventListener("click", tryPlay, { once: true });
+      window.addEventListener("keydown", tryPlay, { once: true });
+    }
+
+    // Stop when leaving or on p6
+    if (shouldStop && gradAudio) {
+      gradAudio.pause();
+      gradAudio.currentTime = 0;
+      gradAudio = null;
+    }
+
     return () => {
-      audio.removeEventListener("ended", handleEnded);
+      window.removeEventListener("click", tryPlay);
+      window.removeEventListener("keydown", tryPlay);
     };
-  }, [isFinalPage]);
+  }, [router.pathname, isCommencementRoute, isGradFinalPage]);
 
   return (
     <>
       <Component {...pageProps} />
       <audio
-        ref={audioRef}
+        ref={kidsAudioRef}
         src="/kids-happy-background-music-354662.mp3"
-        loop={false}
         hidden
         preload="auto"
       />
