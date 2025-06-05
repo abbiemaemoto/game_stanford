@@ -8,6 +8,19 @@ import { Play } from "lucide-react";
 export default function StoryPage() {
   const router = useRouter();
 
+  useEffect(() => {
+    const audio = new Audio("/cheer.mp3");
+    audio.volume = 0.8;
+    audio.play().catch(() => {
+      // Autoplay blocked until user interaction
+    });
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
+
   const handleContinue = () => {
     router.push("/");
   };
@@ -27,28 +40,26 @@ export default function StoryPage() {
       {/* Speaker aligned to bottom center */}
       <div className="absolute bottom-0 left-[40%] transform -translate-x-1/2">
         <div className="relative">
-            {/* Speaker Image */}
-            <Image src="/speaker.png" alt="commencement" width={520} height={480} />
+          {/* Speaker Image */}
+          <Image src="/speaker.png" alt="commencement" width={520} height={480} />
 
-            {/* Speech Bubble */}
-            <div className="absolute top-0 left-full ml-4 bg-white text-black text-2xl font-bold px-10 py-8 rounded-xl shadow-md w-[380px]">
+          {/* Speech Bubble */}
+          <div className="absolute top-0 left-full ml-4 bg-white text-black text-2xl font-bold px-10 py-8 rounded-xl shadow-md w-[380px]">
             As you saw from the final activity, everyone's Stanford journey takes them somewhere unexpected & exciting. Cherish this fact, and remember that it's your journey that makes you a winner. Thanks for playing the Game of Stanford!
-            </div>
-
+          </div>
         </div>
-        </div>
+      </div>
 
-    <div className="fixed bottom-8 right-10">
+      {/* Play Again Button */}
+      <div className="fixed bottom-8 right-10">
         <Button
           className="bg-red-600 hover:bg-red-700 text-white px-8 py-5 text-lg"
           onClick={handleContinue}
         >
-        <Play className="w-5 h-5 fill-white" />
+          <Play className="w-5 h-5 fill-white mr-2" />
           Play Again
         </Button>
       </div>
-    
-
     </div>
   );
 }
