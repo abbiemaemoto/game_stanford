@@ -1,16 +1,25 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import "../pages/globals.css";
 
-
 export default function StanfordWebsite() {
   const router = useRouter();
+  const [showPopup, setShowPopup] = useState(true); // Always show on load
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleSeniorYearClick = () => {
     router.push("/instructions/intro1");
+  };
+
+  const handleChoice = (enable: boolean) => {
+    setShowPopup(false);
+    if (enable) {
+      audioRef.current?.play().catch(() => {});
+    }
   };
 
   return (
@@ -21,8 +30,6 @@ export default function StanfordWebsite() {
         style={{
           backgroundImage:
             "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Jun%201%2C%202025%2C%2012_16_52%20PM-yWjmhMid2wcEmODJDU9ZBJ0EfNyuLG.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       />
 
@@ -31,32 +38,27 @@ export default function StanfordWebsite() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* Disabled buttons */}
-            <Button
-              disabled
-              className="bg-gray-500 text-white cursor-not-allowed hover:bg-gray-500 px-6 py-3 text-lg font-medium opacity-100"
-              style={{ opacity: 1, backgroundColor: "#6b7280" }}
-            >
-              Freshman year
-            </Button>
+            <div className="rounded-xl p-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+              {["Freshman", "Sophomore", "Junior"].map((year) => (
+                <Button
+                  key={year}
+                  disabled
+                  className="text-white cursor-not-allowed px-6 py-3 text-lg font-medium shadow-md"
+                  style={{
+                    backgroundColor: "#4B5563",
+                    opacity: 1,
+                    backdropFilter: "none",
+                    mixBlendMode: "normal",
+                  }}
+                >
+                  {year} year
+                </Button>
+              ))}
+            </div>
 
-            <Button
-              disabled
-              className="bg-gray-500 text-white cursor-not-allowed hover:bg-gray-500 px-6 py-3 text-lg font-medium opacity-100"
-              style={{ opacity: 1, backgroundColor: "#6b7280" }}
-            >
-              Sophomore year
-            </Button>
 
-            <Button
-              disabled
-              className="bg-gray-500 text-white cursor-not-allowed hover:bg-gray-500 px-6 py-3 text-lg font-medium opacity-100"
-              style={{ opacity: 1, backgroundColor: "#6b7280" }}
-            >
-              Junior year
-            </Button>
 
-            {/* Active Senior year button with bounce animation and glow */}
-
+            {/* Active button */}
             <Button
               onClick={handleSeniorYearClick}
               className="senior-button px-6 py-3 text-lg font-medium text-white bg-red-600 hover:bg-red-700 transition duration-300 flex items-center gap-2"
@@ -64,10 +66,32 @@ export default function StanfordWebsite() {
               <Play className="w-5 h-5 fill-white" />
               Senior year
             </Button>
-
           </div>
         </div>
       </div>
+
+      {/* Audio Element */}
+      <audio
+        ref={audioRef}
+        src="/kids-happy-background-music-354662.mp3"
+        loop={false}
+        hidden
+        preload="auto"
+      />
+
+      {/* Popup Modal */}
+      {showPopup && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center space-y-4">
+            <p className="text-xl font-semibold">Turn on the background music!</p>
+            <div className="flex justify-center gap-4">
+              <Button onClick={() => handleChoice(true)} className="bg-green-600 hover:bg-green-700">
+                Done
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <style jsx>{`
         .senior-button {
