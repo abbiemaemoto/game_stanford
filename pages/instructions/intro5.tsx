@@ -11,10 +11,10 @@ export default function FinalInstructionsPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const instructions = [
-    "Points you accummulate throughout your time here will shape who you become by graduation day and determine your post-grad destiny. You can gain and lose points in each category (Aura, Health, Prodigy), but you cannot go below zero in any category.",
-    "Place the tandem bike at the start of the board. You all will move on the bike together, progressing through every square on the physical board. To unlock the challenge associated with each square, find & click on the corresponding icon on the digital map.",
-    "To start the game, distribute the four avatars in the game box amongst the four players. Your avatar will be placed into the physical board's parking lots, to mark your choices for when it's time to 'Choose your Narrative' or play 'Trivia at the Arbor'.",
-    "And finally, don't forget to have fun- reflect on your Stanford experience and make this senior year one that you'll never forget. Are you ready to play??",
+    "Place your tandem bike onto the board",
+    "Distribute the four character tokens. These will be your placeholders when answering trivia/pick-your-path activities.  ",
+    "Throughout the game you will collect point cards, and you can never go before 0 points in any category",
+    "Your tandem bike will bring through through senior year at Stanford, and the icons on the physical board will help you to identify where to go on the digital map",
   ];
 
   const nextSlide = () => {
@@ -30,21 +30,21 @@ export default function FinalInstructionsPage() {
   };
 
   const handleStartGame = () => {
-    router.push("/game/map");
+    router.push("/instructions/intro6");
   };
 
   return (
     <div className="min-h-screen relative">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center opacity-70"
         style={{
           backgroundImage:
             "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Jun%201%2C%202025%2C%2012_28_43%20PM-nmClUBhfDONnTrrPDopABrXDiBu017.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       />
+      {/*black overlay*/}
+      <div className="absolute inset-0 bg-black opacity-60 z-0" />
 
       {/* Back Button */}
       <div className="absolute top-3 left-3 z-10">
@@ -63,20 +63,18 @@ export default function FinalInstructionsPage() {
       {/* White Overlay in Center */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div
-          className="w-3.5/5 h-3.5/5 bg-white rounded-lg relative flex flex-col justify-between p-8"
-          style={{ opacity: 0.95 }}
+          className="w-[800px] h-[300px] bg-white rounded-lg relative flex flex-col justify-between p-8"
+          style={{ opacity: 0.85 }}
         >
           {/* Title */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-red-600">
-              Final Instructions!!
-            </h2>
+            <h2 className="text-3xl font-bold text-red-600">Instructions</h2>
           </div>
 
           {/* Carousel Content */}
           <div className="flex-1 flex items-center justify-center">
             <div className="max-w-3xl">
-              <div className="text-2xl font-medium mb-4 text-center">
+              <div className="text-2xl font-medium mb-4 text-center w-100 h-32 flex items-center justify-center">
                 {currentSlide + 1}. {instructions[currentSlide]}
               </div>
 
@@ -120,7 +118,7 @@ export default function FinalInstructionsPage() {
                 className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg"
                 onClick={handleStartGame}
               >
-                Start Game
+                Next
               </Button>
             )}
           </div>
