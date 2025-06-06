@@ -56,8 +56,6 @@ export default function StanfordWebsite() {
               ))}
             </div>
 
-
-
             {/* Active button */}
             <Button
               onClick={handleSeniorYearClick}
@@ -83,10 +81,13 @@ export default function StanfordWebsite() {
       {showPopup && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center space-y-4">
-            <p className="text-xl font-semibold">Turn on the background music!</p>
+            <p className="text-xl font-semibold">Enable background music?</p>
             <div className="flex justify-center gap-4">
-              <Button onClick={() => handleChoice(true)} className="bg-green-600 hover:bg-green-700">
-                Done
+              <Button
+                onClick={() => handleChoice(true)}
+                className="bg-green-600 hover:bg-green-700"
+              >
+                Allow
               </Button>
             </div>
           </div>
