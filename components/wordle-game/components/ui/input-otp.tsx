@@ -1,25 +1,37 @@
 "use client"
 
 import * as React from "react"
-import { OTPInput, OTPInputContext } from "@/components/wordle-game/components/ui/input-otp"
 import { Dot } from "lucide-react"
-
 import { cn } from "@/lib/utils"
 
-const InputOTP = React.forwardRef<
-  React.ElementRef<typeof OTPInput>,
-  React.ComponentPropsWithoutRef<typeof OTPInput>
->(({ className, containerClassName, ...props }, ref) => (
-  <OTPInput
-    ref={ref}
-    containerClassName={cn(
-      "flex items-center gap-2 has-[:disabled]:opacity-50",
-      containerClassName
-    )}
-    className={cn("disabled:cursor-not-allowed", className)}
-    {...props}
-  />
-))
+// Optional: You can create a context if slots are controlled via context elsewhere
+const OTPInputContext = React.createContext<{
+  slots: {
+    char: string
+    hasFakeCaret: boolean
+    isActive: boolean
+  }[]
+}>({
+  slots: [],
+})
+
+type InputOTPProps = React.ComponentPropsWithoutRef<"div"> & {
+  containerClassName?: string
+}
+
+const InputOTP = React.forwardRef<React.ElementRef<"div">, InputOTPProps>(
+  ({ className, containerClassName, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(
+        "flex items-center gap-2 has-[:disabled]:opacity-50",
+        containerClassName,
+        className
+      )}
+      {...props}
+    />
+  )
+)
 InputOTP.displayName = "InputOTP"
 
 const InputOTPGroup = React.forwardRef<
@@ -35,7 +47,11 @@ const InputOTPSlot = React.forwardRef<
   React.ComponentPropsWithoutRef<"div"> & { index: number }
 >(({ index, className, ...props }, ref) => {
   const inputOTPContext = React.useContext(OTPInputContext)
-  const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index]
+  const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index] || {
+    char: "",
+    hasFakeCaret: false,
+    isActive: false,
+  }
 
   return (
     <div
@@ -68,4 +84,10 @@ const InputOTPSeparator = React.forwardRef<
 ))
 InputOTPSeparator.displayName = "InputOTPSeparator"
 
-export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator }
+export {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+  InputOTPSeparator,
+  OTPInputContext, // if you're managing slots context elsewhere
+}
