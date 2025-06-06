@@ -12,20 +12,19 @@ export default function PlaceholderPage() {
 
   return (
     <div className="relative min-h-screen bg-sky-200 overflow-hidden">
-      {/* Background Image */}
+            {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/arbor.png"
           alt="Background Arbor"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-30"
+          fill
+          className="opacity-50 object-cover"
           priority
         />
       </div>
 
       {/* Student image */}
-      <div className="absolute bottom-8 left-8 z-10">
+      <div className="absolute bottom-8 left-8 z-20">
         <div className="relative w-40 h-40 md:w-64 md:h-64">
           <Image
             src="/trivia.png"
@@ -38,7 +37,7 @@ export default function PlaceholderPage() {
       </div>
 
       {/* Centered Content */}
-      <div className="relative z-10 flex flex-col justify-center items-center min-h-[50vh] px-6 text-center">
+      <div className="relative z-20 flex flex-col justify-center items-center min-h-[50vh] px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-gray-800 drop-shadow">
           Why is Stanford's mascot a tree anyways?
         </h2>
@@ -100,7 +99,7 @@ export default function PlaceholderPage() {
           </Card>
         </div>
       </div>
-      <div className="mt-6 max-w-4xl mx-auto px-4 text-center">
+      <div className="relative z-20 mt-6 max-w-4xl mx-auto px-4 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 leading-tight drop-shadow">
           If you got it right...
         </h1>
@@ -110,12 +109,12 @@ export default function PlaceholderPage() {
           vitality.
         </h2>
       </div>
-      <div className="flex justify-center space-x-4 text-4xl font-semibold mt-6">
-        <span className="text-blue-600">Prodigy: +1</span>
+      <div className="relative z-20 flex justify-center space-x-4 text-4xl font-semibold mt-6">
+        <span className="text-blue-400">Prodigy: +1</span>
       </div>
 
       {/* Continue Button */}
-      <div className="fixed bottom-8 right-10 z-10">
+      <div className="fixed bottom-8 right-10 z-30">
         <Button
           className="bg-red-600 hover:bg-red-700 text-white px-8 py-5 text-lg shadow-lg"
           onClick={handleContinue}

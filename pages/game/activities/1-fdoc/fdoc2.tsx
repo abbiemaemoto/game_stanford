@@ -78,8 +78,11 @@ export default function OptionPage() {
             </div>
           </div>
           <div className="mt-12 text-center">
-            <p className="text-2xl font-medium text-gray-800 p-4 bg-white/50 rounded-lg inline-block shadow-md">
-              Place your player token in the Narrative Lot parking spot corresponding to the option you chose. Click continue after all players have made their choice.
+            <p className="text-2xl font-medium text-gray-800 p-4 bg-white rounded-lg inline-block shadow-md animate-pulse" style={{
+              textShadow: '0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.6), 0 0 30px rgba(255, 255, 0, 0.4)',
+              filter: 'drop-shadow(0 0 8px rgba(255, 255, 0, 0.5))'
+            }}>
+              Place your individual player avatar in the Narrative Lot parking spot corresponding to the option you choose. Click continue after all players have made their choice.
             </p>
           </div>
 

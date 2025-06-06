@@ -40,12 +40,12 @@ export default function PhoneMinigame2() {
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-center items-center p-8">
         {/* Main Content Box */}
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-10 max-w-4xl mx-auto shadow-2xl border border-white/20">
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 max-w-4xl mx-auto shadow-2xl border border-white/20">
           
           {/* Show Answer Screen */}
           {showAnswer ? (
             <div className="text-center animate-fade-in">
-              <h2 className="text-4xl font-bold text-gray-800 mb-8">
+              <h2 className="text-4xl font-bold text-white mb-8">
                 THE ANSWER IS...
               </h2>
               
@@ -59,22 +59,8 @@ export default function PhoneMinigame2() {
                 
                 {/* Rewards Section */}
                 <div className="bg-white/80 rounded-xl p-6 border border-red-200">
-                  <div className="flex justify-center items-center space-x-4">
-                    <Image 
-                      src="/point-icons/prodigy.png" 
-                      alt="Prodigy Points" 
-                      width={48} 
-                      height={48} 
-                      className="animate-pulse"
-                    />
-                    <div className="text-xl font-bold text-yellow-700">+4 Prodigy Points for being a genius</div>
-                    <Image 
-                      src="/point-icons/prodigy.png" 
-                      alt="Prodigy Points" 
-                      width={48} 
-                      height={48} 
-                      className="animate-pulse"
-                    />
+                  <div className="flex justify-center items-center">
+                    <div className="text-xl font-bold text-black"><span className="text-blue-400">+2 Prodigy</span> for being a genius and <span className="text-yellow-400">+2 Health</span> for your hangover going away!</div>
                   </div>
                 </div>
               </div>
@@ -89,7 +75,7 @@ export default function PhoneMinigame2() {
           ) : (
             <>
               <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-8 leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
                   Solve the Riddle:
                 </h2>
                 
@@ -111,22 +97,10 @@ export default function PhoneMinigame2() {
                   
                   {/* Rewards Section */}
                   <div className="bg-white/80 rounded-xl p-6 border border-blue-200">
-                    <div className="flex justify-center items-center space-x-4">
-                      <Image 
-                        src="/point-icons/prodigy.png" 
-                        alt="Prodigy Points" 
-                        width={48} 
-                        height={48} 
-                      />
-                      <div className="text-lg font-semibold text-blue-800">
-                        Whoever gets it right gets +4 Prodigy Points
+                    <div className="flex justify-center items-center">
+                      <div className="text-lg font-semibold text-black">
+                        Whoever gets it right gets <span className="text-blue-400">+2 Prodigy</span> and <span className="text-yellow-400">+2 Health</span>!
                       </div>
-                      <Image 
-                        src="/point-icons/prodigy.png" 
-                        alt="Prodigy Points" 
-                        width={48} 
-                        height={48} 
-                      />
                     </div>
                   </div>
                 </div>
@@ -140,7 +114,7 @@ export default function PhoneMinigame2() {
                       Riddle Solved!
                     </p>
                   </div>
-                  <p className="text-lg text-gray-600 animate-pulse">
+                  <p className="text-lg text-white animate-pulse">
                     Revealing the answer...
                   </p>
                 </div>

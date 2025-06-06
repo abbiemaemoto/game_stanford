@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function FallFinals1() {
   const router = useRouter();
@@ -10,6 +11,18 @@ export default function FallFinals1() {
   const handleContinue = () => {
     router.push("/game/activities/8-fall-finals/fall-finals2");
   };
+
+  useEffect(() => {
+    const audio = new Audio('/library.mp3');
+    audio.loop = true;
+    audio.volume = 0.4;
+    audio.play().catch(console.error);
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden">

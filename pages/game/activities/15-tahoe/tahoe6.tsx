@@ -105,8 +105,8 @@ export default function AnswerPage() {
           }
         </h2>
         <div className="flex justify-center space-x-4 text-4xl font-semibold">
-          <span className="text-red-600">Health: +1</span>
-          <span className="text-green-600">Aura: +1</span>
+          <span className="text-yellow-400">Health: +1</span>
+          <span className="text-pink-400">Aura: +1</span>
         </div>
 
         {/* Continue Button */}

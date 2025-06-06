@@ -48,17 +48,11 @@ export default function DinnerOnTheQuad2() {
                 <div className="absolute -top-2 -right-2 text-5xl animate-pulse">👋</div>
               </div>
             </div>
-                        {/* Action text */}
-                        <div className="bg-gradient-to-r from-yellow-50/80 to-amber-50 border-2 border-yellow-400 rounded-xl p-6 mb-8">
-              <p className="text-xl font-bold text-yellow-800">
-                Ready... Set... SLAP! 🤚
-              </p>
-            </div>
             {/* Points Section */}
             <div className="space-y-6 mb-8">
               <div className="bg-gradient-to-r from-green-50/80 to-emerald-50 border-2 border-green-400 rounded-xl p-6">
-                <p className="text-2xl font-bold text-green-700">
-                  +2 Aura for the first person for being speedy!
+                <p className="text-2xl font-bold text-green-900">
+                  <span className="text-pink-400">+1 Aura</span> and <span className="text-yellow-400">+1 Health</span> for the first person for being speedy!
                 </p>
               </div>
               

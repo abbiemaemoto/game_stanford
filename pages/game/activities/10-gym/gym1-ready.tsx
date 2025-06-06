@@ -5,17 +5,17 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-export default function WinterMidterms1() {
+export default function GymReady() {
   const router = useRouter();
 
-  const handleContinue = () => {
-    router.push("/game/activities/12-winter-midterms/winter-midterms2");
+  const handleReady = () => {
+    router.push("/game/activities/10-gym/gym2");
   };
 
   useEffect(() => {
-    const audio = new Audio('/library.mp3');
+    const audio = new Audio('/countdown.mp3');
     audio.loop = true;
-    audio.volume = 0.4;
+    audio.volume = 0.5;
     audio.play().catch(console.error);
 
     return () => {
@@ -30,7 +30,7 @@ export default function WinterMidterms1() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/winter-midterms1.png')",
+          backgroundImage: "url('/gym.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -39,25 +39,28 @@ export default function WinterMidterms1() {
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-black/55" />
 
-      {/* Centered Header Text */}
+      {/* Centered Content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center px-8 z-10">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-2xl text-center mb-6">
-          It's midterm season :/ You want to be an academic weapon but...Berlin is also tonight!
-        </h1>
-        <h2 className="text-4xl md:text-3xl lg:text-4xl font-medium text-white leading-tight drop-shadow-2xl text-center">
-          You and your friend debate whether you should stay in or go out.
-        </h2>
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-12 max-w-3xl mx-auto shadow-2xl border border-white/20 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight drop-shadow-2xl mb-8">
+            Warm Up Time!
+          </h1>
+          <div className="text-6xl mb-8">🏋️‍♂️💪</div>
+          <p className="text-xl text-white/90 mb-8">
+            Stretch your muscles and get ready...
+          </p>
+        </div>
       </div>
 
-      {/* Continue Button */}
+      {/* Ready Button */}
       <div className="fixed bottom-8 right-10 z-10">
         <Button
-          className="bg-red-600 hover:bg-red-700 text-white px-8 py-5 text-lg"
-          onClick={handleContinue}
+          className="bg-green-600 hover:bg-green-700 text-white px-10 py-6 text-xl font-bold shadow-lg animate-pulse"
+          onClick={handleReady}
         >
-          Continue
+          Let's Lift!
         </Button>
       </div>
     </div>
   );
-}
+} 

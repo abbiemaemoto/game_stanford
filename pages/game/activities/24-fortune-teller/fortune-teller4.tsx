@@ -74,9 +74,9 @@ export default function PointsPage() {
             </Card>
             <div className="mt-4 bg-white rounded-lg p-3 border border-red-500">
               <div className="flex justify-center space-x-4 text-sm font-semibold">
-                <span className="text-red-600">Health: +1</span>
-                <span className="text-green-600">Aura: +3</span>
-                <span className="text-blue-600">Prodigy: +1</span>
+                <span className="text-yellow-400">Health: +1</span>
+                <span className="text-pink-400">Aura: +3</span>
+                <span className="text-blue-400">Prodigy: +1</span>
               </div>
             </div>
           </div>
@@ -95,9 +95,9 @@ export default function PointsPage() {
             </Card>
             <div className="mt-4 bg-white/100 rounded-lg p-3 border border-red-800">
               <div className="flex justify-center space-x-4 text-sm font-semibold">
-                <span className="text-red-600">Health: +1</span>
-                <span className="text-green-600">Aura: +2</span>
-                <span className="text-blue-600">Prodigy: +1</span>
+                <span className="text-yellow-400">Health: +1</span>
+                <span className="text-pink-400">Aura: +2</span>
+                <span className="text-blue-400">Prodigy: +1</span>
               </div>
             </div>
           </div>
@@ -116,9 +116,9 @@ export default function PointsPage() {
             </Card>
             <div className="mt-4 bg-white/100 rounded-lg p-3 border border-red-800">
               <div className="flex justify-center space-x-4 text-sm font-semibold">
-                <span className="text-red-600">Health: +1</span>
-                <span className="text-green-600">Aura: +2</span>
-                <span className="text-blue-600">Prodigy: +1</span>
+                <span className="text-yellow-400">Health: +1</span>
+                <span className="text-pink-400">Aura: +2</span>
+                <span className="text-blue-400">Prodigy: +1</span>
               </div>
             </div>
           </div>

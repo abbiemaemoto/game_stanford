@@ -40,12 +40,12 @@ export default function NeighborhoodsMinigame2() {
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-center items-center p-8">
         {/* Main Content Box */}
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-10 max-w-4xl mx-auto shadow-2xl border border-white/20">
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-10 max-w-4xl mx-auto shadow-2xl border border-white/20">
           
           {/* Show Answer Screen */}
           {showAnswer ? (
             <div className="text-center animate-fade-in">
-              <h2 className="text-4xl font-bold text-gray-800 mb-8">
+              <h2 className="text-4xl font-bold text-white mb-8">
                 The 8 Stanford Neighborhoods Named After Trees:
               </h2>
               
@@ -70,7 +70,7 @@ export default function NeighborhoodsMinigame2() {
           ) : (
             <>
               <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-8 leading-tight">
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
                   Your assignment for the week?
                 </h2>
                 
@@ -88,21 +88,9 @@ export default function NeighborhoodsMinigame2() {
                   {/* Rewards Section */}
                   <div className="bg-white/80 rounded-xl p-6 border border-green-200">
                     <p className="text-xl font-semibold text-green-800 mb-4">
-                      If successful, everyone + 3 Prodigy Points.<br/>
-                      If not, everyone -3 Prodigy Points.
+                      If successful, everyone <span className="text-blue-400">+ 3 Prodigy Points</span>.<br/>
+                      If not, everyone <span className="text-blue-400">-3 Prodigy Points</span>.
                     </p>
-                    <div className="flex justify-center space-x-8">
-                      <div className="text-center">
-                        <Image 
-                          src="/point-icons/prodigy.png" 
-                          alt="Prodigy Points" 
-                          width={48} 
-                          height={48} 
-                          className="mx-auto mb-2"
-                        />
-                        <div className="text-lg font-semibold text-yellow-700">±3 Prodigy Points</div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -115,7 +103,7 @@ export default function NeighborhoodsMinigame2() {
                       Assignment Complete!
                     </p>
                   </div>
-                  <p className="text-lg text-gray-600 animate-pulse">
+                  <p className="text-lg text-white animate-pulse">
                     Showing the answer...
                   </p>
                 </div>

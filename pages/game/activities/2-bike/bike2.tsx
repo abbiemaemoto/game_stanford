@@ -21,7 +21,7 @@ export default function BikeMinigame2() {
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
         style={{
           backgroundImage: "url('/bike.png')",
           backgroundSize: "cover",
@@ -35,18 +35,8 @@ export default function BikeMinigame2() {
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-center items-center p-8">
         {/* Main Content Box */}
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-10 max-w-4xl mx-auto shadow-2xl border border-white/20">
+        <div className=" backdrop-blur-sm rounded-2xl p-10 max-w-4xl mx-auto shadow-2xl border border-white/20">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-8 leading-tight">
-              But where did you leave your bike keys??
-            </h2>
-            
-            {/* Key illustration */}
-            <div className="flex justify-center items-center mb-8">
-              <div className="text-4xl animate-pulse">🔍</div>
-              <div className="text-4xl ml-4">🗝️</div>
-            </div>
-
             <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-400 rounded-2xl p-8 mb-8 shadow-lg">
               <h3 className="text-2xl text-green-800 mb-4">
                 🌿 Your lanyard is green... 🌿
@@ -57,26 +47,17 @@ export default function BikeMinigame2() {
               
               {/* Rewards Section */}
               <div className="bg-white/80 rounded-xl p-6 border border-green-200">
-                <div className="flex justify-center space-x-8">
+                <div className="flex justify-center space-x-4">
                   <div className="text-center">
-                    <Image 
-                      src="/point-icons/prodigy.png" 
-                      alt="Prodigy Points" 
-                      width={48} 
-                      height={48} 
-                      className="mx-auto mb-2"
-                    />
-                    <div className="text-lg font-semibold text-yellow-700">+2 Prodigy Points</div>
+                    <div className="text-lg font-semibold text-blue-400">+2 Prodigy Points</div>
                   </div>
                   <div className="text-center">
-                    <Image 
-                      src="/point-icons/health.png" 
-                      alt="Health Points" 
-                      width={48} 
-                      height={48} 
-                      className="mx-auto mb-2"
-                    />
-                    <div className="text-lg font-semibold text-red-600">+2 Health Points</div>
+                    <div className="text-lg font-semibold text-yellow-400">+2 Health Points</div>
+                  </div>
+                </div>
+                <div className="flex justify-center mt-4">
+                  <div className="text-xl font-medium text-green-800 p-3 bg-white rounded-lg inline-block animate-pulse">
+                    Don't forget to draw your physical point cards!
                   </div>
                 </div>
               </div>

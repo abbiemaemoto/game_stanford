@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Dunch1() {
   const router = useRouter();
@@ -10,7 +11,17 @@ export default function Dunch1() {
   const handleContinue = () => {
     router.push("/game/activities/20-dunch/dunch2");
   };
+  useEffect(() => {
+    const audio = new Audio('/ksig.mp3');
+    audio.loop = true;
+    audio.volume = 0.5;
+    audio.play().catch(console.error);
 
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Image */}

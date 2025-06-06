@@ -66,16 +66,16 @@ export default function AnswerPage() {
               </CardHeader>
               <CardContent className="flex flex-col items-center space-y-4 p-6 text-gray-600 flex-1">
                 <p className="text-xl font-bold text-center">
-                  The one night you rallied, not a single soul was at the function..... Picked the wrong night I guess
+                  The one night you rallied, not a single soul was at the function..... Picked the wrong night I guess, but at least you got to sleep early!
                 </p>
               </CardContent>
             </Card>
 
             <div className="mt-4 bg-white rounded-lg p-3 border border-red-500">
               <div className="flex justify-center space-x-4 text-sm font-semibold">
-                <span className="text-red-600">Health: +1</span>
-                <span className="text-green-600">Aura: -2</span>
-                <span className="text-blue-600">Prodigy: +1</span>
+                <span className="text-yellow-400">Health: +2</span>
+                <span className="text-pink-400">Aura: -2</span>
+                <span className="text-blue-400">Prodigy: +0</span>
               </div>
             </div>
           </div>
@@ -95,9 +95,9 @@ export default function AnswerPage() {
 
             <div className="mt-4 bg-white rounded-lg p-3 border border-red-500">
               <div className="flex justify-center space-x-4 text-sm font-semibold">
-                <span className="text-red-600">Health: -3</span>
-                <span className="text-green-600">Aura: +1</span>
-                <span className="text-blue-600">Prodigy: -1</span>
+                <span className="text-yellow-400">Health: -3</span>
+                <span className="text-pink-400">Aura: +1</span>
+                <span className="text-blue-400">Prodigy: -1</span>
               </div>
             </div>
           </div>
@@ -117,9 +117,9 @@ export default function AnswerPage() {
 
             <div className="mt-4 bg-white rounded-lg p-3 border border-red-500">
               <div className="flex justify-center space-x-4 text-sm font-semibold">
-                <span className="text-red-600">Health: +3</span>
-                <span className="text-green-600">Aura: -1</span>
-                <span className="text-blue-600">Prodigy: +1</span>
+                <span className="text-yellow-400">Health: +3</span>
+                <span className="text-pink-400">Aura: -1</span>
+                <span className="text-blue-400">Prodigy: +1</span>
               </div>
             </div>
           </div>

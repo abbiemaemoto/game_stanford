@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Dunch2() {
   const router = useRouter();
@@ -10,6 +11,32 @@ export default function Dunch2() {
   const handleContinue = () => {
     router.push("/game/transition");
   };
+
+  useEffect(() => {
+    const audio = new Audio('/ksig.mp3');
+    audio.volume = 0.7;
+    audio.loop = true;
+    
+    // Function to start playing from 1 minute in
+    const playFromOneMinute = () => {
+      audio.currentTime = 60; // Start at 60 seconds (1 minute)
+      audio.play().catch(console.error);
+    };
+
+    // Wait for metadata to load to ensure we can set currentTime
+    audio.addEventListener('loadedmetadata', playFromOneMinute);
+    
+    // If already loaded, play immediately
+    if (audio.readyState >= 1) {
+      playFromOneMinute();
+    }
+
+    return () => {
+      audio.removeEventListener('loadedmetadata', playFromOneMinute);
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden">

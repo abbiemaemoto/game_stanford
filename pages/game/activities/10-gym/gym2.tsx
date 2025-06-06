@@ -33,16 +33,7 @@ export default function GymMinigame2() {
         </h1>
         <h2 className="text-4xl font-medium text-white mb-12 text-center drop-shadow-2xl">
           First person to <span className="underline">run to the nearest door</span><br/>
-          gets +2 Health Points. 
-          <div className="flex justify-center items-center space-x-4">
-                    <Image 
-                      src="/point-icons/health.png" 
-                      alt="Health Points" 
-                      width={100} 
-                      height={100} 
-                      className="animate-pulse"
-                    />
-                    </div>
+          gets <span className="text-yellow-400 font-bold">+3 Health Points</span>. 
         </h2>
       </div>
 

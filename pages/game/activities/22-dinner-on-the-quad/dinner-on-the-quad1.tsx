@@ -3,13 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function DinnerOnTheQuad1() {
   const router = useRouter();
 
   const handleContinue = () => {
-    router.push("/game/activities/22-dinner-on-the-quad/dinner-on-the-quad2");
+    router.push("/game/activities/22-dinner-on-the-quad/dinner-on-the-quad1-ready");
   };
+
+  useEffect(() => {
+    const audio = new Audio('/wind-chimes-37762.mp3');
+    audio.loop = true;
+    audio.volume = 0.5;
+    audio.play().catch(console.error);
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden">

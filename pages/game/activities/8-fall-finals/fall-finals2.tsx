@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function FallFinals2() {
   const router = useRouter();
@@ -10,6 +11,18 @@ export default function FallFinals2() {
   const handleContinue = () => {
     router.push("/game/wordle-game");
   };
+
+  useEffect(() => {
+    const audio = new Audio('/library.mp3');
+    audio.loop = true;
+    audio.volume = 0.4;
+    audio.play().catch(console.error);
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -35,34 +48,14 @@ export default function FallFinals2() {
               Let's play Wordle!
             </h1>
             
-            {/* Prodigy Points Icon */}
-            <div className="flex justify-center items-center mb-8">
-              <Image 
-                src="/point-icons/prodigy.png" 
-                alt="Prodigy Points" 
-                width={48} 
-                height={48} 
-                className="animate-pulse"
-              />
-            </div>
-
             {/* Points Information */}
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-400 rounded-2xl p-6 mb-8 shadow-lg">
               <p className="text-2xl font-bold text-blue-700 leading-relaxed">
-                Everyone gets Prodigy Points based on the number of attempts it took (+6 for getting on first attempt, +1 for getting on 6th attempt)
+                Everyone gets <span className="text-blue-400">Prodigy Points</span> based on the number of attempts it took (+6 for getting on first attempt, +1 for getting on 6th attempt)
               </p>
             </div>
 
-            {/* Wordle Grid Visualization */}
-            <div className="flex flex-col items-center space-y-2 mb-8">
-              {[...Array(6)].map((_, i) => (
-                <div key={i} className="flex space-x-2">
-                  {[...Array(5)].map((_, j) => (
-                    <div key={j} className="w-12 h-12 border-2 border-gray-300 rounded bg-white"></div>
-                  ))}
-                </div>
-              ))}
-            </div>
+          
           </div>
         </div>
       </div>

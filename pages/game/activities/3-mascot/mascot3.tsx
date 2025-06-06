@@ -103,7 +103,7 @@ export default function PlaceholderPage() {
 
       {/* Instructional Text */}
       <div className="mt-12 max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6">
-        <p className="text-lg md:text-2xl font-medium text-gray-800 text-center ">
+        <p className="text-lg md:text-3xl font-medium text-black text-center shadow-md animate-pulse ">
           Place your player token in the Trivia Lot parking spot corresponding
           to the option you chose. Click continue after all players have made
           their choice.

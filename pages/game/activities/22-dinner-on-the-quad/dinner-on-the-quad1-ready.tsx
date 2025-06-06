@@ -5,17 +5,17 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-export default function WinterFinals1() {
+export default function DinnerOnTheQuadReady() {
   const router = useRouter();
 
-  const handleContinue = () => {
-    router.push("/game/activities/16-winter-finals/winter-finals2");
+  const handleReady = () => {
+    router.push("/game/activities/22-dinner-on-the-quad/dinner-on-the-quad2");
   };
 
   useEffect(() => {
-    const audio = new Audio('/kids.mp3');
+    const audio = new Audio('/countdown.mp3');
     audio.loop = true;
-    audio.volume = 0.4;
+    audio.volume = 0.5;
     audio.play().catch(console.error);
 
     return () => {
@@ -30,7 +30,7 @@ export default function WinterFinals1() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/winter-finals.png')",
+          backgroundImage: "url('/dinner-on-the-quad2.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -42,32 +42,26 @@ export default function WinterFinals1() {
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-center items-center p-8">
         {/* Main Content Box */}
-        <div>
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
-              It's finals crunch time. You're in CS 247G lecture and starting to stress for the final project.
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-medium text-white mb-8 leading-relaxed">
-              Maybe you're in need of some emotional support?
-            </h2>
-
-            {/* Ready? text */}
-            <div className="text-2xl text-white mb-8 font-medium">
-              Ready?
-            </div>
-          </div>
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-12 max-w-4xl mx-auto shadow-2xl border border-white/20 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+            Get Ready...
+          </h1>
+          <p className="text-xl text-white/90 mb-8">
+            Speed is everything. Are you ready to claim your table?
+          </p>
         </div>
       </div>
 
-      {/* Continue Button */}
+
+      {/* Ready Button */}
       <div className="fixed bottom-8 right-10 z-10">
         <Button
-          className="bg-red-600 hover:bg-red-700 text-white px-8 py-5 text-lg"
-          onClick={handleContinue}
+          className="bg-green-600 hover:bg-green-700 text-white px-10 py-6 text-xl font-bold shadow-lg animate-pulse"
+          onClick={handleReady}
         >
-          Continue
+          Ready!
         </Button>
       </div>
     </div>
   );
-}
+} 

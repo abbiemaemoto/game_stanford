@@ -106,8 +106,8 @@ export default function AnswerPage() {
           {"You know your classmates really well! We know you’d never cheat..."}
         </h2>
         <div className="flex justify-center space-x-4 text-4xl font-semibold">
-          <span className="text-blue-600">Prodigy: +1</span>
-          <span className="text-green-600">Aura: +1</span>
+          <span className="text-blue-400">Prodigy: +1</span>
+          <span className="text-pink-400">Aura: +1</span>
         </div>
         {/* Continue Button */}
         <div className="fixed bottom-8 right-10">

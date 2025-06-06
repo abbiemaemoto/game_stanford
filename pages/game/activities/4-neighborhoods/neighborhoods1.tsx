@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function NeighborhoodsMinigame1() {
   const router = useRouter();
@@ -10,6 +11,18 @@ export default function NeighborhoodsMinigame1() {
   const handleContinue = () => {
     router.push("/game/activities/4-neighborhoods/neighborhoods2");
   };
+
+  useEffect(() => {
+    const audio = new Audio('/walking.mp3');
+    audio.loop = true;
+    audio.volume = 0.5;
+    audio.play().catch(console.error);
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden">

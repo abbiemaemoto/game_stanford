@@ -102,7 +102,7 @@ export default function AnswerPage() {
           }
         </h2>
         <div className="flex justify-center space-x-4 text-4xl font-semibold">
-          <span className="text-blue-600">Prodigy: +2</span>
+          <span className="text-blue-400">Prodigy: +2</span>
         </div>
 
         {/* Continue Button */}

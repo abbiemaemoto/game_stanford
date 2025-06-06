@@ -3,13 +3,26 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function BikeMinigame1() {
   const router = useRouter();
 
   const handleContinue = () => {
-    router.push("/game/activities/2-bike/bike2");
+    router.push("/game/activities/2-bike/bike1-ready");
   };
+
+  useEffect(() => {
+    const audio = new Audio('/keys.mp3');
+    audio.loop = true;
+    audio.volume = 0.5;
+    audio.play().catch(console.error);
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden">

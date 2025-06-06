@@ -68,9 +68,9 @@ export default function AnswerPage() {
 
             <div className="mt-4 bg-white rounded-lg p-3 border border-red-500">
               <div className="flex justify-center space-x-4 text-sm font-semibold">
-                <span className="text-red-600">Health: +0</span>
-                <span className="text-green-600">Aura: +2</span>
-                <span className="text-blue-600">Prodigy: +0</span>
+                <span className="text-yellow-400">Health: +0</span>
+                <span className="text-pink-400">Aura: +2</span>
+                <span className="text-blue-400">Prodigy: +0</span>
               </div>
             </div>
           </div>
@@ -90,9 +90,9 @@ export default function AnswerPage() {
 
             <div className="mt-4 bg-white rounded-lg p-3 border border-red-500">
               <div className="flex justify-center space-x-4 text-sm font-semibold">
-                <span className="text-red-600">Health: +0</span>
-                <span className="text-green-600">Aura: +1</span>
-                <span className="text-blue-600">Prodigy: +1</span>
+                <span className="text-yellow-400">Health: +0</span>
+                <span className="text-pink-400">Aura: +1</span>
+                <span className="text-blue-400">Prodigy: +1</span>
               </div>
             </div>
           </div>
@@ -112,16 +112,16 @@ export default function AnswerPage() {
 
             <div className="mt-4 bg-white rounded-lg p-3 border border-red-500">
               <div className="flex justify-center space-x-4 text-sm font-semibold">
-                <span className="text-red-600">Health: +0</span>
-                <span className="text-green-600">Aura: +0</span>
-                <span className="text-blue-600">Prodigy: +3</span>
+                <span className="text-yellow-400">Health: +0</span>
+                <span className="text-pink-400">Aura: +0</span>
+                <span className="text-blue-400">Prodigy: +3</span>
               </div>
             </div>
           </div>
 
           <div className="md:col-span-3 flex justify-center mt-12">
-            <div className="text-2xl font-bold text-gray-800 p-4 bg-white rounded-lg shadow-md">
-              Don't forget to gather your point cards!
+            <div className="text-2xl font-medium text-gray-800 p-4 bg-white rounded-lg inline-block shadow-md animate-pulse">
+              Don't forget to draw your physical point cards!
             </div>
           </div>
 

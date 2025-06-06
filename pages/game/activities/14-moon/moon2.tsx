@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Moon2() {
   const router = useRouter();
@@ -10,6 +11,18 @@ export default function Moon2() {
   const handleContinue = () => {
     router.push("/game/transition");
   };
+
+  useEffect(() => {
+    const audio = new Audio('/shine.mp3');
+    audio.loop = true;
+    audio.volume = 0.4;
+    audio.play().catch(console.error);
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -45,7 +58,7 @@ export default function Moon2() {
             {/* Consequences Section */}
             <div className="bg-gradient-to-r from-red-50 to-pink-50 border-2 border-red-400 rounded-2xl p-6 mb-8 shadow-lg">
               <p className="text-2xl font-bold text-red-700 leading-relaxed">
-                Loser gets -1 Aura & -3 Health, sorry. Gotta stay sharp.
+                Loser gets <span className="text-pink-400 font-bold">-1 Aura</span> & <span className="text-yellow-400 font-bold">-3 Health</span>, sorry. Gotta stay sharp.
               </p>
             </div>
 

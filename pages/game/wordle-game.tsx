@@ -123,6 +123,18 @@ export default function WordleGame() {
     }
   }, [currentAttempt, attempts, gameStatus])
 
+  useEffect(() => {
+    const audio = new Audio('/library.mp3');
+    audio.loop = true;
+    audio.volume = 0.4;
+    audio.play().catch(console.error);
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, [])
+
   const getLetterStatus = (letter: string, index: number, word: string) => {
     letter = letter.toLowerCase()
     if (TARGET_WORD[index] === letter) {
@@ -185,14 +197,7 @@ export default function WordleGame() {
           <div className="space-y-4">
             {/* Points Display */}
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-400 rounded-2xl p-6 shadow-lg text-center">
-              <div className="flex justify-center items-center mb-3">
-                <img 
-                  src="/point-icons/prodigy.png" 
-                  alt="Prodigy Points" 
-                  className="w-12 h-12 animate-pulse"
-                />
-              </div>
-              <h3 className="text-2xl font-bold text-blue-800 mb-2">
+              <h3 className="text-2xl font-bold text-blue-400 mb-2">
                 {getPointsMessage()}
               </h3>
               {gameStatus === "won" && (

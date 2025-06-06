@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function PhoneMinigame1() {
   const router = useRouter();
@@ -10,6 +11,18 @@ export default function PhoneMinigame1() {
   const handleContinue = () => {
     router.push("/game/activities/6-phone/phone2");
   };
+
+  useEffect(() => {
+    const audio = new Audio('/wind-chimes-37762.mp3');
+    audio.loop = true;
+    audio.volume = 0.3;
+    audio.play().catch(console.error);
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden">

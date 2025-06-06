@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function FrostFest2() {
   const router = useRouter();
@@ -10,6 +11,32 @@ export default function FrostFest2() {
   const handleContinue = () => {
     router.push("/game/transition");
   };
+
+  useEffect(() => {
+    const audio = new Audio('/viva-la-vida.mp3');
+    audio.volume = 0.5;
+    
+    // Function to start playing from the last 10 seconds
+    const playLastTenSeconds = () => {
+      const startTime = Math.max(0, audio.duration - 10);
+      audio.currentTime = startTime;
+      audio.play().catch(console.error);
+    };
+
+    // Wait for metadata to load to get duration
+    audio.addEventListener('loadedmetadata', playLastTenSeconds);
+    
+    // If already loaded, play immediately
+    if (audio.readyState >= 1) {
+      playLastTenSeconds();
+    }
+
+    return () => {
+      audio.removeEventListener('loadedmetadata', playLastTenSeconds);
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
 
   return (
     <div className="min-h-screen relative overflow-hidden">
@@ -44,7 +71,7 @@ export default function FrostFest2() {
             {/* Sparkle emojis and aura points */}
             <div className="flex justify-center items-center mb-8 space-x-4">
               <div className="text-4xl">✨</div>
-              <div className="text-2xl font-bold text-yellow-200">+2 Aura Points for being able to sing along</div>
+              <div className="text-2xl font-bold text-pink-400">+2 Aura Points for being able to sing along</div>
               <div className="text-4xl">✨</div>
             </div>
           </div>
