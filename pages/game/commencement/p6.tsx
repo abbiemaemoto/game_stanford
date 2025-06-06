@@ -11,9 +11,9 @@ const instructions = [
   <>
     📊 Each Future Card includes 3 tiers:
     <ul className="list-disc list-inside ml-6 mt-4 space-y-2 text-left text-xl font-semibold">
-      <li>🟤 <strong>Common</strong>: If you have <strong>0–4</strong> points in a category</li>
-      <li>🔵 <strong>Rare</strong>: If you have <strong>5–8</strong> points</li>
-      <li>🟣 <strong>Legendary</strong>: If you have <strong>9+</strong> points</li>
+      <li>🟤 <strong>Common</strong>: If you have <strong>0–7</strong> points in a category</li>
+      <li>🔵 <strong>Rare</strong>: If you have <strong>8-12</strong> points</li>
+      <li>🟣 <strong>Legendary</strong>: If you have <strong>13+</strong> points</li>
       <li>
         For example, if you have <strong>3 Aura points</strong>, you’ll pick from the <strong>🟤 Common</strong> tier on the Aura card you drew.
       </li>
