@@ -111,7 +111,7 @@ export default function AnswerPage() {
         </h2>
       </div>
       <div className="flex justify-center mt-6">
-        <div className="bg-white/90 rounded-xl p-4 shadow-lg">
+        <div className="bg-white/100 rounded-xl p-4 shadow-lg">
           <div className="flex justify-center text-3xl font-semibold">
             <span className="text-yellow-400">Health: +2</span>
           </div>

@@ -109,10 +109,13 @@ export default function PlaceholderPage() {
           vitality.
         </h2>
       </div>
-      <div className="relative z-20 flex justify-center space-x-4 text-4xl font-semibold mt-6">
-        <span className="text-blue-400">Prodigy: +1</span>
+      <div className="flex justify-center mt-6">
+        <div className="bg-white rounded-xl p-4 shadow-lg">
+          <div className="flex justify-center text-3xl font-semibold">
+            <span className="text-blue-400">Prodigy: +1</span>
+          </div>
+        </div>
       </div>
-
       {/* Continue Button */}
       <div className="fixed bottom-8 right-10 z-30">
         <Button
