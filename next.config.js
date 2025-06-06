@@ -1,19 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
-  swcMinify: false,
   images: {
     unoptimized: true,
   },
-  // Disable some features that can cause instability in development
   experimental: {
-    optimizePackageImports: false,
+    // If you're not optimizing package imports, you can remove this line entirely
+    // optimizePackageImports: []
   },
-  // Better error handling
   onDemandEntries: {
     maxInactiveAge: 60 * 1000,
     pagesBufferLength: 2,
   },
 };
 
-module.exports = nextConfig; 
+module.exports = nextConfig;
