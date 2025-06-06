@@ -13,7 +13,7 @@ export default function FinalInstructionsPage() {
   const instructions = [
     "Points you accummulate throughout your time here will shape who you become by graduation day and determine your post-grad destiny. You can gain and lose points in each category (Aura, Health, Prodigy), but you cannot go below zero in any category.",
     "Place the tandem bike at the start of the board. You all will move on the bike together, progressing through every square on the physical board. To unlock the challenge associated with each square, find & click on the corresponding icon on the digital map.",
-    "To start the game, distribute the four avatars in the game box amongst the four players. Your avatar lives in the physical board's parking lots, to mark your choices for when it's time to 'Choose your Narrative' or play 'Trivia at the Arbor'.",
+    "To start the game, distribute the four avatars in the game box amongst the four players. Your avatar will be placed into the physical board's parking lots, to mark your choices for when it's time to 'Choose your Narrative' or play 'Trivia at the Arbor'.",
     "And finally, don't forget to have fun- reflect on your Stanford experience and make this senior year one that you'll never forget. Are you ready to play??",
   ];
 

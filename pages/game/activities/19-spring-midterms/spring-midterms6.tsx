@@ -109,10 +109,14 @@ export default function AnswerPage() {
           You know your classmates really well! We know you’d never cheat...
         </h2>
       </div>
-      <div className="flex justify-center space-x-4 text-4xl font-semibold mt-6">
-                  <span className="text-blue-400">Prodigy: +1</span>
-        <span className="text-pink-400">Aura: +1</span>
-      </div>
+              <div className="flex justify-center mt-6">
+          <div className="bg-white/100 rounded-xl p-4 shadow-lg">
+            <div className="flex justify-center space-x-6 text-3xl font-semibold">
+              <span className="text-blue-400">Prodigy: +1</span>
+              <span className="text-pink-400">Aura: +1</span>
+            </div>
+          </div>
+        </div>
       {/* Continue Button */}
       <div className="fixed bottom-8 right-10 z-10">
         <Button

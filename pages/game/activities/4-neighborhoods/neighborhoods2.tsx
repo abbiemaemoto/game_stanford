@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function NeighborhoodsMinigame2() {
   const router = useRouter();
@@ -17,7 +17,17 @@ export default function NeighborhoodsMinigame2() {
       setShowAnswer(true);
     }, 1500);
   };
+  useEffect(() => {
+    const audio = new Audio('/library.mp3');
+    audio.loop = true;
+    audio.volume = 0.3;
+    audio.play().catch(console.error);
 
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
   const handleContinueToTransition = () => {
     router.push("/game/transition");
   };
