@@ -14,51 +14,33 @@ export default function GraduationPage() {
 
   return (
     <div className="min-h-screen bg-sky-200 relative overflow-hidden">
-      {/* Cloud Images */}
-      <div className="absolute top-12 left-8">
-        <Image
-          src="/cloud.webp"
-          alt="Decorative cloud"
-          width={120}
-          height={80}
-          className="opacity-80"
-        />
-      </div>
-
-      <div className="absolute top-12 right-8">
-        <Image
-          src="/cloud.webp"
-          alt="Decorative cloud"
-          width={120}
-          height={80}
-          className="opacity-80"
-        />
-      </div>
-
-      {/* Header Text */}
-      <div className="pt-12 px-8 text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
-          {"Happy Thursday! "}
-        </h1>
-        <h2 className="text-3xl md:text-3xl lg:text-4xl font-medium text-black leading-tight mt-6">
-          {
-            "You're at the Arbor for trivia...Answering correctly gets you points"
-          }
-        </h2>
-      </div>
-
-      {/* Graduation Image - Bottom Center */}
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+      {/* Background Arbor Image (on top of sky-blue background) */}
+      <div className="absolute inset-0 z-0">
         <Image
           src="/arbor.png"
-          alt="The arbor at Stanford where trivia takes place"
-          width={0}
-          height={0}
-          className="w-[700px] h-auto object-cover"
+          alt="The Arbor background"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
           priority
+          className="opacity-80"
         />
-      </div>
 
+        {/* Header Text */}
+        {/* Text Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center text-center min-h-screen px-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg">
+            Guess what day it is! Thursday!!
+          </h1>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-white mt-6 max-w-3xl drop-shadow">
+            Let's go to Trivia @ the Arbor again. Remember, answering correctly
+            gets you points.
+          </h2>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-medium text-white mt-6 max-w-3xl drop-shadow">
+            Ready?
+          </h2>
+        </div>
+      </div>
       {/* Continue Button */}
       <div className="fixed bottom-8 right-10">
         <Button
