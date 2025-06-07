@@ -7,7 +7,15 @@ import { useEffect, useRef, useState } from "react";
 export default function PlaceholderPage() {
   const router = useRouter();
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [showInstructions, setShowInstructions] = useState(false);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowInstructions(true);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
   const handleContinue = () => {
     router.push("/game/activities/23-end-of-year/end-of-year4");
   };
@@ -121,13 +129,15 @@ export default function PlaceholderPage() {
       </div>
 
       {/* Instructional Text */}
-      <div className="mt-12 max-w-3xl mx-auto bg-white/70 backdrop-blur-md rounded-lg shadow-md p-6 relative z-10">
-        <p className="text-lg md:text-2xl font-medium text-gray-800 text-center">
-          Place your player token in the Trivia Lot parking spot corresponding
-          to the option you chose. Click continue after all players have made
-          their choice.
-        </p>
-      </div>
+      {showInstructions && (
+        <div className="mt-12 max-w-3xl mx-auto bg-white rounded-lg p-6 animate-pulse">
+          <p className="text-lg md:text-3xl font-medium text-black text-center ">
+            Place your player token in the Trivia Lot parking spot corresponding
+            to the option you chose. Click continue after all players have made
+            their choice.
+          </p>
+        </div>
+      )}
 
       {/* Continue Button */}
       <div className="fixed bottom-8 right-10 z-10">

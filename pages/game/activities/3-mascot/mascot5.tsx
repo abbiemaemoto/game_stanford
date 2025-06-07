@@ -2,13 +2,25 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useEffect, useRef, useState } from "react";
 
 export default function PlaceholderPage() {
   const router = useRouter();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleContinue = () => {
     router.push("/game/activities/3-mascot/mascot6");
   };
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.5;
+      audioRef.current.currentTime = 0;
+      audioRef.current
+        .play()
+        .catch((err) => console.warn("Autoplay may have been blocked:", err));
+    }
+  }, []);
 
   return (
     <div className="relative min-h-screen bg-sky-200 overflow-hidden">
@@ -120,6 +132,7 @@ export default function PlaceholderPage() {
           Continue
         </Button>
       </div>
+      <audio ref={audioRef} src="/yay.mp3" loop={false} hidden preload="auto" />
     </div>
   );
 }

@@ -7,6 +7,15 @@ import { useEffect, useRef, useState } from "react";
 export default function PlaceholderPage() {
   const router = useRouter();
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [showInstructions, setShowInstructions] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowInstructions(true);
+    }, 600); // 5 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleContinue = () => {
     router.push("/game/activities/3-mascot/mascot4");
@@ -122,9 +131,9 @@ export default function PlaceholderPage() {
       {/* Instructional Text */}
       <div className="mt-12 max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6">
         <p className="text-lg md:text-3xl font-medium text-black text-center shadow-md animate-pulse ">
-          Place your individual player avatar in the Trivia Lot parking spot corresponding
-          to the option you chose. Click continue after all players have made
-          their choice.
+          Place your individual player avatar in the Trivia Lot parking spot
+          corresponding to the option you chose. Click continue after all
+          players have made their choice.
         </p>
       </div>
 

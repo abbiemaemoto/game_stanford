@@ -112,7 +112,7 @@ export default function AnswerPage() {
       <div className="flex justify-center mt-6">
         <div className="bg-white/100 rounded-xl p-4 shadow-lg">
           <div className="flex justify-center text-3xl font-semibold">
-            <span className="text-blue-400">Prodigy: +2</span>
+            <span className="text-blue-600">Prodigy: +2</span>
           </div>
         </div>
       </div>
