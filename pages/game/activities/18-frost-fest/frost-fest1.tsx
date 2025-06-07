@@ -68,7 +68,7 @@ export default function FrostFest1() {
               WOO it's your last Frost Fest!
             </h1>
             <h2 className="text-2xl md:text-3xl font-medium text-white/90 mb-8 leading-relaxed">
-              First to guess the song wins +2 Prodigy Points. 
+              First to guess the song wins +2 Aura Points. 
               <br />
               (volume up!!!)
             </h2>
