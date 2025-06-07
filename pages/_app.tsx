@@ -2,6 +2,8 @@
 import type { AppProps } from "next/app";
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import "../app/globals.css"; // ✅ Correct path to globals.css in app/
+
 
 let gradAudio: HTMLAudioElement | null = null;
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { useTheme } from "next-themes"
-import { Toaster as Sonner } from "@/components/wordle-game/components/ui/sonner"
+import { Toaster as Sonner } from "sonner" // ✅ correct import
 
 type ToasterProps = React.ComponentProps<typeof Sonner>
 

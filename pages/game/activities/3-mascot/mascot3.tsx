@@ -2,13 +2,31 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useEffect, useRef, useState } from "react";
 
 export default function PlaceholderPage() {
   const router = useRouter();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleContinue = () => {
     router.push("/game/activities/3-mascot/mascot4");
   };
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.5;
+      audioRef.current.currentTime = 0;
+      audioRef.current
+        .play()
+        .catch((err) => console.warn("Autoplay may have been blocked:", err));
+    }
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, []);
 
   return (
     <div className="relative min-h-screen bg-sky-200 overflow-hidden">
@@ -110,6 +128,13 @@ export default function PlaceholderPage() {
         </p>
       </div>
 
+      <audio
+        ref={audioRef}
+        src="/jeopardy.mp3"
+        loop={false}
+        hidden
+        preload="auto"
+      />
       {/* Continue Button */}
       <div className="fixed bottom-8 right-10 z-10">
         <Button

@@ -13,20 +13,20 @@ export default function InstructionsPage() {
   };
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative flex items-center justify-center">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center opacity-70"
         style={{
           backgroundImage:
             "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Jun%201%2C%202025%2C%2012_28_43%20PM-nmClUBhfDONnTrrPDopABrXDiBu017.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       />
+      {/*black overlay*/}
+      <div className="absolute inset-0 bg-black opacity-60 z-0" />
 
       {/* Back Button */}
-      <div className="absolute top-3 left-3 z-10">
+      <div className="absolute top-4 left-4 z-10">
         <Link href="/">
           <Button
             variant="outline"
@@ -39,30 +39,23 @@ export default function InstructionsPage() {
         </Link>
       </div>
 
-      {/* White Overlay in Center */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div
-          className="w-3.5/5 h-3.5/5 bg-white rounded-lg relative flex flex-col justify-between p-8"
-          style={{ opacity: 0.95 }}
+      {/* Centered Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-4xl px-4">
+        <h1 className="text-white text-5xl md:text-6xl font-extrabold drop-shadow-lg">
+          You made it to Senior Year!!
+        </h1>
+        <h2 className="mt-6 text-gray-100 text-xl md:text-2xl drop-shadow">
+          It's time to make the most of your last year on the Farm.
+        </h2>
+      </div>
+      {/* Continue Button */}
+      <div className="fixed bottom-8 right-10 z-10">
+        <Button
+          className="bg-red-600 hover:bg-red-700 text-white px-8 py-5 text-lg shadow-lg"
+          onClick={handleContinue}
         >
-          {/* Main Text */}
-          <div className="flex-1 flex items-center justify-center">
-            <p className="text-3xl text-gray-1000 text-center leading-relaxed max-w-3xl">
-              You are entering your senior year at Stanford with some of your
-              best friends that you've made over the past 3 years.
-            </p>
-          </div>
-
-          {/* Continue Button */}
-          <div className="flex justify-end">
-            <Button
-              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 text-lg"
-              onClick={handleContinue}
-            >
-              Continue
-            </Button>
-          </div>
-        </div>
+          Continue
+        </Button>
       </div>
     </div>
   );
