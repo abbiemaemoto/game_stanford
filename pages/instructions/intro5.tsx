@@ -117,7 +117,7 @@ export default function FinalInstructionsPage() {
                 className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 text-lg shadow-md"
                 onClick={handleStartGame}
               >
-                Start Game
+                Ready?
               </Button>
             )}
           </div>
